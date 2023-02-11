@@ -1,0 +1,394 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+  <!--Main content-->
+  <main class="main-content" role="main">
+    <section class="collection-heading">
+      <div class="collection-heading-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="collection-heading-inner heading-group">
+              <h1 class="page-title"><span>Dresses</span></h1>
+              
+              <div class="breadcrumb clearfix">
+                <span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="index-2.html" title="Comeback For Furniture" itemprop="url"><span itemprop="title">Home</span></a></span>
+                <span class="arrow-space">&gt;</span>
+                <span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="collections.html" title="Dresses" itemprop="url"><span itemprop="title">Dresses</span></a></span>
+                <span class="arrow-space">&gt;</span> <strong>Page 1 of 1</strong>
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="collection-content">
+      <div class="collection-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="collection-inner">
+            <!-- Tags loading -->
+              <div id="tags-load" style="display:none;"><i class="fa fa-spinner fa-pulse fa-2x"></i></div>
+              <div id="collection">
+                <div class="collection-leftsidebar sidebar col-sm-3 clearfix">
+                  <div class="sidebar-block collection-block">
+                    <div class="sidebar-title">Categories</div>
+                    <div class="sidebar-content">
+                      <ul class="list-cat">
+                        <li><a href="collections.html">All Collections ( 18 )</a></li>
+                        <li><a href="collections.html">Autumn Collection (13)</a></li>
+                        <li class="active"><a href="collections.html">Dresses (12)</a></li>
+                        <li><a href="collections.html">Home page (18)</a></li>
+                        <li><a href="collections.html">Jeans (12)</a></li>
+                        <li><a href="collections.html">Shorts (9)</a></li>
+                        <li><a href="collections.html">Skirts (18)</a></li>
+                        <li><a href="collections.html">Spring Collection (10)</a></li>
+                        <li><a href="collections.html">Summer Collection (13)</a></li>
+                        <li><a href="collections.html">Trousers (11)</a></li>
+                        <li><a href="collections.html">Winter Collection (15)</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="sidebar-block filter-block">
+                    <div class="sidebar-title">Shop by</div>
+                    <div id="tags-filter-content" class="sidebar-content">
+                      <!-- filter tags group -->
+                      <div class="filter-tag-group">
+                        <!-- tags groupd 1 -->
+                        <div class="tag-group" id="coll-filter-1">
+                          <p class="title">Size</p>
+                          <ul>
+                            <li><a title="Narrow selection to products matching tag S" href="#"><span class="fe-checkbox"></span> S</a></li>
+                            <li><a title="Narrow selection to products matching tag L" href="#"><span class="fe-checkbox"></span> L</a></li>
+                            <li><a title="Narrow selection to products matching tag XL" href="#"><span class="fe-checkbox"></span> XL</a></li>
+                          </ul>
+                        </div>
+                        <!-- tags groupd 2 -->
+                        <div class="tag-group" id="coll-filter-2">
+                          <p class="title">Color</p>
+                          <ul>
+                            <li class="swatch-tag "><span style="background-color: green; background-image: url(assets/images/green.png);" class="btooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Green"><a title="Narrow selection to products matching tag Green" href="#"> </a></span></li>
+                            <li class="swatch-tag "><span style="background-color: black; background-image: url(assets/images/black.png);" class="btooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Black"><a title="Narrow selection to products matching tag Black" href="#"> </a></span></li>
+                            <li class="swatch-tag "><span style="background-color: red; background-image: url(assets/images/red.png);" class="btooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Red"><a title="Narrow selection to products matching tag Red" href="#"> </a></span></li>
+                            <li class="swatch-tag  white-color"><span style="background-color: white; background-image: url(assets/images/white.png);" class="btooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="White"><a title="Narrow selection to products matching tag White" href="#"> </a></span></li>
+                            <li class="swatch-tag "><span style="background-color: gray; background-image: url(assets/images/gray.png);" class="btooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Gray"><a title="Narrow selection to products matching tag Gray" href="#"> </a></span></li>
+                          </ul>
+                        </div>
+                        <!-- tags groupd 3 -->
+                        <div class="tag-group" id="coll-filter-3">
+                          <p class="title">Price</p>
+                          <ul>
+                            <li><a title="Narrow selection to products matching tag Under $100" href="#"><span class="fe-checkbox"></span> Under $100</a></li>
+                            <li><a title="Narrow selection to products matching tag $100 - $200" href="#"><span class="fe-checkbox"></span> $100 - $200</a></li>
+                            <li><a title="Narrow selection to products matching tag Above $200" href="#"><span class="fe-checkbox"></span> Above $200</a></li>
+                          </ul>
+                        </div>
+                        <!-- tags groupd 3 -->
+                        <div class="tag-group" id="coll-filter-4">
+                          <p class="title">Features</p>
+                          <ul>
+                            <li><a title="Narrow selection to products matching tag short" href="#"><span class="fe-checkbox"></span> short</a></li>
+                            <li><a title="Narrow selection to products matching tag long" href="#"><span class="fe-checkbox"></span> long</a></li>
+                            <li><a title="Narrow selection to products matching tag Vintage" href="#"><span class="fe-checkbox"></span> Vintage</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sidebar-block vender-block">
+                    <div class="sidebar-title">Vendor List</div>
+                    <div class="sidebar-content">
+                      <ul>
+                        <li>
+                          <a href="collections.html" title="Vendor 1">Vendor 1</a>
+                        </li>
+                        <li>
+                          <a href="collections.html" title="Vendor 2">Vendor 2</a>
+                        </li>
+                        <li>
+                          <a href="collections.html" title="Vendor 3">Vendor 3</a>
+                        </li>
+                        <li>
+                          <a href="collections.html" title="Vendor 4">Vendor 4</a>
+                        </li>
+                        <li>
+                          <a href="collections.html" title="Vendor 5">Vendor 5</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="sidebar-block type-block">
+                    <div class="sidebar-title">Type List</div>
+                    <div class="sidebar-content">
+                      <ul>
+                        <li>
+                          <a href="collections.html" title="Dressing">Dressing</a>
+                        </li>
+                        <li>
+                          <a href="collections.html" title="Hoodies Wear">Hoodies Wear</a>
+                        </li>
+                        <li>
+                          <a href="collections.html" title="Sweaters Wear">Sweaters Wear</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="collection-mainarea col-sm-9 clearfix">
+                  <div class="collection-toolbar">
+                    <div class="group_toolbar">
+                      <!-- View as -->
+                      <div class="grid_list">
+                        <ul class="list-inline option-set hidden-xs" data-option-key="layoutMode">
+                          <li data-option-value="fitRows" id="goGrid" class="active goAction " data-toggle="tooltip" data-placement="top" title="" data-original-title="Grid">
+                            <i class="fa fa fa-th"></i>
+                          </li>
+                          <li data-option-value="straightDown" id="goList" class="goAction " data-toggle="tooltip" data-placement="top" title="" data-original-title="List">
+                            <i class="fa fa-th-list"></i>
+                          </li>
+                        </ul>
+                      </div>
+                      <!-- Number product per page -->
+                      <div class="show-per-page">
+                        <div id="showButtonWarper" class="dropdown-toggle" data-toggle="dropdown">
+                          <button id="showButton">
+                            <span class="name">12 products per page</span>
+                            <i class="fa fa-caret-down"></i>
+                          </button>
+                          <i class="sub-dropdown1"></i>
+                          <i class="sub-dropdown"></i>
+                        </div>
+                        <div id="showBox" class="control-container dropdown-menu">
+                          <ul id="showForm" class="list-unstyled text-left list-styled">
+                            <li class="show active">
+                              <a href="#">12 products per page</a>
+                            </li>
+                            <li class="show ">
+                              <a href="#">18 products per page</a>
+                            </li>
+                            <li class="show ">
+                              <a href="#">24 products per page</a>
+                            </li>
+                            <li class="show ">
+                              <a href="#">30 products per page</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <!-- Sort by -->
+                      <div class="sortBy">
+                        <div id="sortButtonWarper" class="dropdown-toggle" data-toggle="dropdown">
+                          <button id="sortButton">
+                            <span class="name">Featured</span><i class="fa fa-caret-down"></i>
+                          </button>
+                          <i class="sub-dropdown1"></i>
+                          <i class="sub-dropdown"></i>
+                        </div>
+                        <div id="sortBox" class="control-container dropdown-menu">
+                          <ul id="sortForm" class="list-unstyled option-set text-left list-styled" data-option-key="sortBy">
+                            <li class="sort manual"><a href="collections.html">Featured</a></li>
+                            <li class="sort price-ascending"><a href="collections.html">Price, low to high</a></li>
+                            <li class="sort price-descending"><a href="collections.html">Price, high to low</a></li>
+                            <li class="sort title-ascending"><a href="collections.html">Alphabetically, A-Z</a></li>
+                            <li class="sort title-descending"><a href="collections.html">Alphabetically, Z-A</a></li>
+                            <li class="sort created-ascending"><a href="collections.html">Date, old to new</a></li>
+                            <li class="sort created-descending"><a href="collections.html">Date, new to old</a></li>
+                            <li class="sort best-selling"><a href="collections.html">Best Selling</a></li>
+                          </ul>
+                        </div>
+                      </div>        
+                    </div>
+                  </div>                
+                  <div class="collection-items clearfix">
+                   
+                    <div class="products">
+                      {% for item in object_list %}
+                      <div class="product-item col-sm-4">
+                        
+                        <div class="product">
+                          <div class="row-left">
+                          <a href="{{ item.get_absolute_url }}" class="hoverBorder container_item"> 
+                            <div class="hoverBorderWrapper">
+                            <img src="{% static 'assets/images/7_large.jpg' %}" class="not-rotation img-responsive front" alt="Coco Lee, Jam2">
+                            <div class="mask"></div>
+                            <img src="{%static 'assets/images/2_large.jpg' %}" class="rotation img-responsive" alt="Coco Lee, Jam2">    
+                            </div>        
+                          </a>
+                          <span class="sale_banner">
+                            <span class="sale_text" data-toggle="tooltip" data-placement="top" title="" data-original-title="Save 100.0%">Sale</span>
+                          </span>
+                          <div class="hover-mask grid-mode">
+                            <div class="group-mask">
+                            <div class="inner-mask">         
+                              <div class="group-actionbutton">
+                              <form action="http://demo.themeforshop.com/cart/add" method="post">
+                                <div class="hide clearfix"> 
+                                <select name="id">
+                                  <option selected="selected" value="20691995078">black / S</option>
+                                  <option value="20691995142">blue / S</option>
+                                  <option value="20691995206">white / S</option>
+                                  <option value="20691995270">red / S</option>
+                                  <option value="20691995334">black / L</option>
+                                  <option value="20691995462">blue / L</option>
+                                  <option value="20691995526">white / L</option>
+                                </select>
+                                </div>  
+                                <div class="effect-ajax-cart">
+                                <input type="hidden" name="quantity" value="1">
+                                <button class="btn select-option" type="button" onclick="window.location='product.html';"><i class="fa fa-bars"></i></button>
+                                </div>
+                              </form>
+                              <ul class="quickview-wishlist-wrapper">
+                                <li class="quickview hidden-xs hidden-sm">
+                                <div class="product-ajax-cart ">
+                                  <span class="overlay_mask"></span>
+                                  <div data-handle="donec-justo-condimentum-1" data-target="#quick-shop-modal" class="quick_shop" data-toggle="modal">
+                                  <a class=""><i class="fa fa-search" title="Quick View"></i></a>
+                                  <span class="product-json hide"></span>
+                                  </div>
+                                </div>
+                                </li>
+                                <li class="wishlist hidden-xs">
+                                <form method="post" action="http://demo.themeforshop.com/html_comeback/organiccosmeticsstore/wish-list.html" id="contact_form8" class="contact-form" accept-charset="UTF-8"><input type="hidden" value="customer" name="form_type"><input type="hidden" name="utf8" value="✓">
+                                  <input type="hidden" name="contact[email]" value="bao.nguyen@codespot.vn">
+                                  <input type="hidden" name="contact[tags]" value="6537878150">
+                                  <button type="submit" class="wish-list" title="wish list"><i class="fa fa-heart"></i></button>
+                                </form>
+                                </li>
+                              </ul>
+                              </div>
+                            </div><!--inner-mask-->   
+                            </div><!--Group mask-->     
+                          </div>
+                          </div>
+                          
+                          <div class="row-right animMix">
+                          <div class="grid-mode">
+                            <div class="product-title"><a class="title-5" href="{{ item.get_absolute_url }}"> {{ item.get_category_display }}</a></div>
+                            <div class="product-title"><a class="title-5" href="{{ item.get_absolute_url }}">{{ item.title }}</a></div>
+                            <div class="product-price" style="font-family:'currencies'">
+                            <span class="price_sale"><span class="money" data-currency-usd="$200.00">${% if item.discount_price %}
+                              {{ item.discount_price }}
+                              {% else %}
+                              
+                              {{ item.price }}
+                              
+                              {% endif %}</span></span>
+                            <del class="price_compare"> <span class="money" data-currency-usd="$300.00">${{ item.price }}</span></del>
+                            </div>    
+                            <div class="rating-star">
+                            <span class="spr-badge" id="spr_badge_5" data-rating="3.0">
+                              <span class="spr-starrating spr-badge-starrating"><i class="spr-icon spr-icon-star" style=""></i><i class="spr-icon spr-icon-star" style=""></i><i class="spr-icon spr-icon-star" style=""></i><i class="spr-icon spr-icon-star-empty" style=""></i><i class="spr-icon spr-icon-star-empty" style=""></i></span>
+                              <span class="spr-badge-caption">
+                              1 review
+                              </span>
+                            </span>
+                            </div>
+                          </div>     
+                          <div class="list-mode hide">
+                            <div class="product-title"><a class="title-5" href="{{ item.get_absolute_url }}">{{ item.title }}</a></div>
+                            <div class="rating-star">
+                            <span class="spr-badge" id="spr_badge_6" data-rating="3.0">
+                              <span class="spr-starrating spr-badge-starrating"><i class="spr-icon spr-icon-star" style=""></i><i class="spr-icon spr-icon-star" style=""></i><i class="spr-icon spr-icon-star" style=""></i><i class="spr-icon spr-icon-star-empty" style=""></i><i class="spr-icon spr-icon-star-empty" style=""></i></span>
+                              <span class="spr-badge-caption">
+                              1 review
+                              </span>
+                            </span>
+                            </div>
+                            <div class="product-price" style="font-family:'currencies'">
+                            <span class="price_sale"><span class="money" data-currency-usd="$200.00">${% if item.discount_price %}
+                              {{ item.discount_price }}
+                              {% else %}
+                              
+                              {{ item.price }}
+                              
+                              {% endif %}</span></span>
+                            <del class="price_compare"> <span class="money" data-currency-usd="$300.00">${{ item.price }}</span></del>
+                            </div> 
+                            
+                            <div class="product-description">
+                            Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis amet voluptas assumenda est, omnis dolor repellendus quis nostrum. Temporibus autem quibusdam et aut officiis debitis aut rerum dolorem necessitatibus saepe eveniet ut et neque porro quisquam est, qui...
+                            </div>
+                            <div class="product-group-actions">
+                            <form class="product-addtocart" action="#" method="post">
+                              <div class="hide clearfix"> 
+                              <select name="id">
+                                <option value="20692000710">black / S</option>
+                                <option value="20692000774">red / S</option>
+                                <option selected="selected" value="20692000838">white / S</option>
+                              </select>
+                              </div>  
+                              <div class="effect-ajax-cart">
+                              <input type="hidden" name="quantity" value="1">
+                              <button class="btn btn-1 select-option" type="button" onclick="window.location='{{ item.get_absolute_url }}';"><i class="fa fa-bars"></i></button>
+                              </div>
+                            </form>
+                            <ul class="quickview-wishlist-wrapper">            
+                              <li class="product-wishlist wishlist">
+                              <form method="post" action="http://demo.themeforshop.com/html_comeback/organiccosmeticsstore/wish-list.html" id="contact_form11" class="contact-form" accept-charset="UTF-8"><input type="hidden" value="customer" name="form_type"><input type="hidden" name="utf8" value="✓">
+                                <input type="hidden" name="contact[email]" value="bao.nguyen@codespot.vn">
+                                <input type="hidden" name="contact[tags]" value="6537881670">
+                                <button type="submit" class="wish-list" title="wish list"><i class="fa fa-heart"></i></button>
+                              </form>
+                              </li>
+                              <li class="product-quickview quickview hidden-xs hidden-sm">
+                              <div class="product-ajax-cart ">
+                                <span class="overlay_mask"></span>
+                                <div data-handle="fancy-dress" data-target="#quick-shop-modal" class="quick_shop" data-toggle="modal">
+                                <a class=""><i class="fa fa-search" title="Quick View"></i></a>
+                                <span class="product-json hide"></span>
+                                </div>
+                              </div>
+                              </li>
+                            </ul>
+                            </div>
+                          </div>
+                          
+                          </div>  
+                          
+                        </div>
+                       
+                      </div>
+                      
+                      
+                      
+                      
+                
+                      
+                         
+                          
+                      {% endfor %} 
+
+                     
+
+
+			</div>
+                      </div>
+                      
+                     <div class="collection-bottom-toolbar">
+                    <div class="product-counter col-sm-6">
+                      Items 1 to  12  of 12 total
+                    </div>
+                    <div class="product-pagination col-sm-6">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="float-right-icon">
+    <ul>
+      <li>
+        <div id="scroll-to-top" data-toggle="" data-placement="left" title="Scroll to Top" class="animated off fadeInRight">
+          <i class="fa fa-angle-up"></i>
+        </div>
+      </li>
+    </ul>
+  </div>
+  {% endblock content %}

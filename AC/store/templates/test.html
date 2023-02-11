@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<h2>Here is the list of items</h2>
+{% for item in items %}
+{{ item}}
+{{ item.title }}
+{{ item.price }}
+{{ item.get_category_display }}
+{% endfor %}
+<a href="{{ object.get_add_to_cart_url }}"> redirect</a>
+{% endblock content %}

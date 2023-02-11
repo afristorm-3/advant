@@ -1,0 +1,433 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+  <!--Main content-->
+  <main class="main-content" role="main">
+    <section class="detail-heading">
+      <div class="detail-heading-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="detail-heading-inner heading-group">
+              <h1 class="page-title">
+                <span>
+                  <a href="http://demo.themeforshop.com/collections/all" title="All Products">Products</a>
+                </span>
+              </h1>
+              <div class="breadcrumb clearfix">
+                <span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="index-2.html" title="Comeback For Furniture" itemprop="url"><span itemprop="title">Home</span></a></span>
+                <span class="arrow-space">&gt;</span>
+                <span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                  <a href="collections_all.html" title="All Products">Products</a>
+                </span>
+                <span class="arrow-space">&gt;</span>
+                <strong>Homme Eau Extreme 1</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="product-detail-content">
+      
+      <div class="detail-content-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="detail-content-inner">
+              <div id="product" class="curabitur-cursus-dignis-2 detail-content">
+                <div class="col-md-12 info-detail-pro clearfix">
+                  <div class="col-md-6" id="product-image">                          
+                    <div id="featuted-image2" class="image featured" style="position: static; overflow: visible;">
+                      <img src="{% static 'assets/images/7_1024x1024.jpg' %}" alt="">
+                    </div>
+                    <div id="gallery-images" class="thumbs clearfix">
+                      <div class="gallery-images-inner">
+                        <div class="slider-3itemsc" style="display:block">
+                          <div class="image active">
+                            <a href="{% static 'assets/images/7_1024x1024.jpg' %}" class="cloud-zoom-gallery">
+                              <img src="{% static 'assets/images/7_large.jpg' %}" alt="Chanel, the cheetah">
+                            </a>
+                          </div>
+                          <div class="image">
+                            <a href="{% static 'assets/images/2_1024x1024.jpg' %}" class="cloud-zoom-gallery">
+                              <img src="{% static 'assets/images/2_large.jpg' %}" alt="Chanel, the cheetah">
+                            </a>
+                          </div>
+                          <div class="image">
+                            <a href="{% static 'assets/images/11_1024x1024.jpg' %}" class="cloud-zoom-gallery">
+                              <img src="{% static 'assets/images/11_large.jpg' %}" alt="Chanel, the cheetah">
+                            </a>
+                          </div>
+                          <div class="image last-in-row">
+                            <a href="{% static 'assets/images/12_1024x1024.jpg' %}" class="cloud-zoom-gallery">
+                              <img src="{% static 'assets/images/12_large.jpg' %}" alt="Chanel, the cheetah">
+                            </a>
+                          </div>
+                          <div class="image">
+                            <a href="{% static 'assets/images/13_1024x1024.jpg' %}" class="cloud-zoom-gallery">
+                              <img src="{% static 'assets/images/13_large.jpg' %}" alt="Chanel, the cheetah">
+                            </a>
+                          </div>
+                        </div>
+                      </div>                  
+                    </div>
+                  </div>
+                 
+                  <div class="col-md-6" id="product-information">
+                   
+                    <h1 class="title">{{object.title}}</h1>                                                                                                
+                    
+                      <div class="product-options ">          
+                        <div class="purchase">
+                          <h2 class="price" id="price-preview" style="font-family:'currencies'"><span class="money" data-currency-usd="$259.00" data-currency="USD">${% if object.discount_price %}
+                            {{ object.discount_price }}
+                            {% else %}
+                            
+                            {{ object.price }}
+                            
+                            {% endif %}</span> <del><span class="money" data-currency-usd="$300.00" data-currency="USD">${{ object.price }}</span></del></h2>
+                        </div>
+                       
+                        <div class="rating-star">
+                          <span class="spr-badge" id="spr_badge_6537875078" data-rating="5.0">
+                            <span class="spr-starrating spr-badge-starrating"><i class="spr-icon spr-icon-star" style=""></i><i class="spr-icon spr-icon-star" style=""></i><i class="spr-icon spr-icon-star" style=""></i><i class="spr-icon spr-icon-star" style=""></i><i class="spr-icon spr-icon-star" style=""></i></span>
+                            <span class="spr-badge-caption">
+                            1 review
+                            </span>
+                          </span>
+                          <span class="review-link"><a href="#customer_review">Review this product</a></span>
+                        </div>
+                        <script>
+                          $('.review-link a').click(function(e) {
+                          e.preventDefault();
+                          var scrollto = $(this).attr('href');
+                          var fix_scrollto = $(scrollto).offset().top + 1800;
+                          $('html, body').animate({
+                          scrollTop: fix_scrollto
+                          }, 500);
+                          });
+                        </script>
+                        <div class="product_vendor">Vendor: Vendor 1</div>
+                        <div class="product_type">Type: Sweaters Wear</div>
+                        <div class="product_vendor">SKU: CH14536</div>
+                        <div class="description">                      
+                          {{ object.description }}
+                        </div>
+                        <script>$(window).load(function() { $('.selector-wrapper:eq(0)').hide(); });</script>
+                        <div class="swatch swatch color clearfix" data-option-index="0">
+                     
+                        
+                          
+                        
+                          
+                          
+                          
+                          
+                        
+                          
+                        </div>
+                        <script>$(window).load(function() { $('.selector-wrapper:eq(1)').hide(); });</script>
+                        <div class="swatch swatch clearfix" data-option-index="1">
+                         
+                         
+                         
+                          
+                          
+                         
+                        </div>
+                        <div class="select clearfix" style="display:none">
+                          
+                          
+                          
+                        </div>
+                        <div class="quantity-wrapper clearfix">
+                          <label class="wrapper-title">Qty</label>
+                          <div class="wrapper">
+                            <span class="qty-down btooltip" data-toggle="tooltip" data-placement="top" title="" data-src="#quantity" data-original-title="Decrease">
+                              <i class="fa fa-minus"></i>
+                            </span>
+                            <input id="quantity" type="text" name="quantity" value="1" maxlength="5" size="5" class="item-quantity">
+                            <span class="qty-up btooltip" data-toggle="tooltip" data-placement="top" title="" data-src="#quantity" data-original-title="Increase">
+                              <i class="fa fa-plus"></i>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="purchase-section multiple">
+                          <div class="purchase">
+                            <a href="{{ object.get_add_to_cart_url }}" id="add-to-cart" class="btn add-to-cart"  name="add"><i class="fa fa-shopping-bag"></i>Add to Cart</a>                        
+                            <div id="cart-animation" style="display:none">1</div>
+                          </div>
+                        </div>
+                      </div>
+                 
+                    <a href="{{ object.get_remove_from_cart_url }}"  class="btn add-to-cart" ><i class="fa fa-shopping-bag"></i>Remove From Cart</a>
+                    <div class="add-to-wishlist">
+                      <span class="non-user" data-toggle="tooltip" data-placement="right" title="" data-original-title="To add this product to your wish list you must Login or Register"><i class="fa fa-heart"></i>Add to Wishlist</span>
+                    </div>
+                    <div class="supports-fontface">
+                      <div class="social-sharing is-clean" data-permalink="https://cs-comeback-furniture.myshopify.com/products/curabitur-cursus-dignis-2">
+                        <a target="_blank" href="http://www.facebook.com/sharer.php?u=https://cs-comeback-furniture.myshopify.com/products/curabitur-cursus-dignis-2" class="share-facebook">
+                          <span class="icon icon-facebook"></span>
+                          <span class="share-title">Share</span>
+                        </a>
+                        <a target="_blank" href="http://twitter.com/share?text=Chanel,%20the%20cheetah&amp;url=https://cs-comeback-furniture.myshopify.com/products/curabitur-cursus-dignis-2" class="share-twitter">
+                          <span class="icon icon-twitter"></span>
+                          <span class="share-title">Tweet</span>
+                        </a>
+                        <a target="_blank" href="../../../pinterest.com/pin/create/button/index68da.html?url=https://cs-comeback-furniture.myshopify.com/products/curabitur-cursus-dignis-2&amp;media=http://cdn.shopify.com/s/files/1/1314/9069/products/3_1024x1024.png?v=1464771024&amp;description=Chanel,%20the%20cheetah" class="share-pinterest">
+                          <span class="icon icon-pinterest"></span>
+                          <span class="share-title">Pin it</span>
+                        </a>
+                        <a target="_blank" href="https://fancy.com/fancyit4c0f.html?ItemURL=https://cs-comeback-furniture.myshopify.com/products/curabitur-cursus-dignis-2&amp;Title=Chanel,%20the%20cheetah&amp;Category=Other&amp;ImageURL=//cdn.shopify.com/s/files/1/1314/9069/products/3_1024x1024.png?v=1464771024" class="share-fancy">
+                          <span class="icon icon-fancy"></span>
+                          <span class="share-title">Fancy</span>
+                        </a>
+                        <a target="_blank" href="http://plus.google.com/share?url=https://cs-comeback-furniture.myshopify.com/products/curabitur-cursus-dignis-2" class="share-google">
+                          <!-- Cannot get Google+ share count with JS yet -->
+                          <span class="icon icon-google_plus"></span>
+                          <span class="share-count is-loaded">+1</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>              
+                </div>
+                <div id="tabs-information" class="col-md-12">
+                  <div class="col-md-12 tabs-title">
+                    <ul class="nav nav-tabs tabs-left sideways">
+                      <li class="active"><a href="#desc" data-toggle="tab">Description</a></li>
+                      <li><a href="#tags" data-toggle="tab">Product Tags</a></li>
+                      <li><a href="#delivery" data-toggle="tab">Delivery Info</a></li>
+                      <li><a href="#warranty" data-toggle="tab">Warranty Info</a></li>
+                      <li><a href="#payment" data-toggle="tab">Payment Info</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-md-12 tabs-content">
+                    <div class="tab-content">
+                      <div class="tab-pane active" id="desc">
+                        <p>{{ object.description}}</p>
+                        <p></p>
+                      </div>
+                      <div class="tab-pane fade " id="tags">
+                        <div class="relative product-detail-tag">
+                          <ul class="list-unstyled">
+                            <li class="tags">
+                              <span>Tags:</span>
+                              <a href="http://demo.themeforshop.com/collections/autumn-collection/100-200">
+                                100-200<span>,</span>
+                              </a>
+                              <a href="http://demo.themeforshop.com/collections/autumn-collection/above-200">
+                                above-200<span>,</span>
+                              </a>
+                              <a href="http://demo.themeforshop.com/collections/autumn-collection/best-seller">
+                                best-seller<span>,</span>
+                              </a>
+                              <a href="http://demo.themeforshop.com/collections/autumn-collection/black">
+                                black<span>,</span>
+                              </a>
+                              <a href="http://demo.themeforshop.com/collections/autumn-collection/chanel">
+                                chanel<span>,</span>
+                              </a>
+                              <a href="http://demo.themeforshop.com/collections/autumn-collection/dior">
+                                dior<span>,</span>
+                              </a>
+                              <a href="http://demo.themeforshop.com/collections/autumn-collection/green">
+                                green<span>,</span>
+                              </a>
+                              <a href="http://demo.themeforshop.com/collections/autumn-collection/l">
+                                l<span>,</span>
+                              </a>
+                              <a href="http://demo.themeforshop.com/collections/autumn-collection/long">
+                                long<span>,</span>
+                              </a>
+                              <a href="http://demo.themeforshop.com/collections/autumn-collection/m">
+                                m<span>,</span>
+                              </a>
+                              <a href="http://demo.themeforshop.com/collections/autumn-collection/red">
+                                red<span>,</span>
+                              </a>
+                              <a href="http://demo.themeforshop.com/collections/autumn-collection/s">
+                                s<span>,</span>
+                              </a>
+                              <a href="http://demo.themeforshop.com/collections/autumn-collection/sale-off">
+                                sale-off<span>,</span>
+                              </a>
+                              <a href="http://demo.themeforshop.com/collections/autumn-collection/short">
+                                short<span>,</span>
+                              </a>
+                              <a href="http://demo.themeforshop.com/collections/autumn-collection/sleeveless">
+                                sleeveless<span>,</span>
+                              </a>
+                              <a href="http://demo.themeforshop.com/collections/autumn-collection/under-100">
+                                under-100<span>,</span>
+                              </a>
+                              <a href="http://demo.themeforshop.com/collections/autumn-collection/vintage">
+                                vintage<span>,</span>
+                              </a>
+                              <a href="http://demo.themeforshop.com/collections/autumn-collection/white">
+                                white<span>,</span>
+                              </a>
+                              <a href="http://demo.themeforshop.com/collections/autumn-collection/xl">
+                                xl
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade " id="delivery">
+                        <h2>Purchasing &amp; Delivery</h2>
+                        <h5>Before You Buy</h5>
+                        <p>To avoid delivery day disappointments, measure the area you plan to place your new furniture in, as well as the furniture you have selected to purchase, before placing your order. Also measure any doorways (height and width) through which the furniture must pass to get to its final position in your home. Identify any delivery obstacles – is there enough ceiling clearance? Will the furniture clear the stairway or elevator? Can the piece be maneuvered around any right angles? Because of our commitment to providing you with outstanding customer service.</p>
+                        <h5>Delivery</h5>
+                        <p>Always free shipping</p>
+                      </div>
+                      <div class="tab-pane fade " id="warranty">
+                        <h2>Warranty Information</h2>
+                        <p>LIMITED WARRANTIES<br>Limited Warranties are non-transferable. The following Limited Warranties are given to the original retail purchaser of the following Ashley Furniture Industries, Inc.Products:</p>
+                        <p>Frames Used In Upholstered and Leather Products<br>Limited Lifetime Warranty<br> A Limited Lifetime Warranty applies to all frames used in sofas, couches, love seats, upholstered chairs, ottomans, sectionals, and sleepers. Ashley Furniture Industries,Inc. warrants these components to you, the original retail purchaser, to be free from material manufacturing defects.</p>
+                      </div>
+                      <div class="tab-pane fade " id="payment">
+                        <h2>Payment  Information</h2>
+                        <p>Dust or wipe clean with a cloth dampened with water once a week. Be sure not to leave water spots on the surface. These water spots will dry and could possibly leave permanent marks.</p>
+                        <p>Clean stains/spots using the following steps:
+                        Dampen a soft cloth with a mixture of hot water and liquid dishwashing detergent.
+                        Wring the cloth as much as possible to remove excess liquid. 
+                        Rub the surface lightly in a circular motion.
+                        Dry the surface immediately with a clean, soft towel.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                 
+                       
+                        </div>                    
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="customer_review">  
+                  <!--div class="preview_title">Write Your Owner Review</div-->
+                  <div class="preview_content">
+                    <div id="shopify-product-reviews" data-id="6537875078">
+                      <div class="spr-container">
+                        <div class="spr-header">
+                          <h2 class="spr-header-title">Customer Reviews</h2>
+                          <div class="spr-summary" itemscope="" itemtype="http://data-vocabulary.org/Review-aggregate">
+                            <meta itemprop="itemreviewed" content="Chanel, the cheetah">
+                            <meta itemprop="votes" content="1">
+                            <span itemprop="rating" itemscope="" itemtype="http://data-vocabulary.org/Rating" class="spr-starrating spr-summary-starrating">
+                              <meta itemprop="average" content="5.0">
+                              <meta itemprop="best" content="5">
+                              <meta itemprop="worst" content="1">
+                              <i class="spr-icon spr-icon-star" style=""></i><i class="spr-icon spr-icon-star" style=""></i><i class="spr-icon spr-icon-star" style=""></i><i class="spr-icon spr-icon-star" style=""></i><i class="spr-icon spr-icon-star" style=""></i>
+                            </span>
+                            <span class="spr-summary-caption">
+                              <span class="spr-summary-actions-togglereviews">Based on 1 review</span>
+                            </span>
+                            <span class="spr-summary-actions">
+                              <a href="#" class="spr-summary-actions-newreview" onclick="active_review_form();return false">Write a review</a>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="spr-content">
+                          <div class="spr-form" id="form_6537875078" style="display: none;">
+                            <form method="post" action="http://demo.themeforshop.com/html_comeback/organiccosmeticsstore/product.html" id="new-review-form_6537875078" class="new-review-form" onsubmit="SPR.submitForm(this);return false;"><input type="hidden" name="review[rating]"><input type="hidden" name="product_id" value="6537875078">
+                              <h3 class="spr-form-title">Write a review</h3>
+                              <fieldset class="spr-form-contact">
+                                <div class="spr-form-contact-name">
+                                  <label class="spr-form-label" for="review_author_6537875078">Name</label>
+                                  <input class="spr-form-input spr-form-input-text " id="review_author_6537875078" type="text" name="review[author]" value="" placeholder="Enter your name">
+                                </div>
+                                <div class="spr-form-contact-email">
+                                  <label class="spr-form-label" for="review_email_6537875078">Email</label>
+                                  <input class="spr-form-input spr-form-input-email " id="review_email_6537875078" type="email" name="review[email]" value="" placeholder="john.smith@example.com">
+                                </div>
+                              </fieldset>
+                              <fieldset class="spr-form-review">
+                                <div class="spr-form-review-rating">
+                                  <label class="spr-form-label">Rating</label>
+                                  <div class="spr-form-input spr-starrating ">
+                                    <a href="#" class="spr-icon spr-icon-star spr-icon-star-empty" data-value="1">&nbsp;</a>
+                                    <a href="#" class="spr-icon spr-icon-star spr-icon-star-empty" data-value="2">&nbsp;</a>
+                                    <a href="#" class="spr-icon spr-icon-star spr-icon-star-empty" data-value="3">&nbsp;</a>
+                                    <a href="#" class="spr-icon spr-icon-star spr-icon-star-empty" data-value="4">&nbsp;</a>
+                                    <a href="#" class="spr-icon spr-icon-star spr-icon-star-empty" data-value="5">&nbsp;</a>
+                                  </div>
+                                </div>
+                                <div class="spr-form-review-title">
+                                  <label class="spr-form-label" for="review_title_6537875078">Review Title</label>
+                                  <input class="spr-form-input spr-form-input-text " id="review_title_6537875078" type="text" name="review[title]" value="" placeholder="Give your review a title">
+                                </div>
+                                <div class="spr-form-review-body">
+                                  <label class="spr-form-label" for="review_body_6537875078">Body of Review <span class="spr-form-review-body-charactersremaining">(1500)</span></label>
+                                  <div class="spr-form-input">
+                                    <textarea class="spr-form-input spr-form-input-textarea " id="review_body_6537875078" data-product-id="6537875078" name="review[body]" rows="10" placeholder="Write your comments here"></textarea>
+                                    
+                                  </div>
+                                </div>
+                              </fieldset>
+                              <fieldset class="spr-form-actions">
+                                <input type="submit" class="spr-button spr-button-primary button button-primary btn btn-primary" value="Submit Review">
+                              </fieldset>
+                            </form>
+                          </div>
+                          <div class="spr-reviews" id="reviews_6537875078">
+                            <div class="spr-review" id="spr-review-7003642">
+                              <div class="spr-review-header">
+                                <span class="spr-starratings spr-review-header-starratings"><i class="spr-icon spr-icon-star" style=""></i><i class="spr-icon spr-icon-star" style=""></i><i class="spr-icon spr-icon-star" style=""></i><i class="spr-icon spr-icon-star" style=""></i><i class="spr-icon spr-icon-star" style=""></i></span>
+                                <h3 class="spr-review-header-title">FRENCH CONNECTION, SUNDAY BLISS BAG</h3>
+                                <span class="spr-review-header-byline"><strong>Jin Alkaid</strong> on <strong>Jun 10, 2016</strong></span>
+                              </div>
+                              <div class="spr-review-content">
+                                <p class="spr-review-content-body">FRENCH CONNECTION, SUNDAY BLISS BAG</p>
+                              </div>
+                              <div class="spr-review-footer">
+                                <a href="#" class="spr-review-reportreview" onclick="SPR.reportReview(7003642);return false" id="report_7003642" data-msg="This review has been reported">Report as Inappropriate</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script type="text/javascript">
+      function active_review_form(){
+        if($("#form_6537875078").attr('style')=='display: none;'){
+          $("#form_6537875078").css('display','block');
+        }
+        else {
+          $("#form_6537875078").css('display','none');
+        }
+      }
+      jQuery(document).ready(function($){
+        $('#gallery-images div.image').on('click', function() {
+          var $this = $(this);
+          var parent = $this.parents('#gallery-images');
+          parent.find('.image').removeClass('active');
+          $this.addClass('active');
+        });
+      });
+    </script>
+  </main>
+
+  
+
+
+  
+       
+         
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+{% endblock content %}

@@ -1,0 +1,1334 @@
+{% load static %}
+{% load cart_template_tags %}
+<!DOCTYPE html>
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="/" />
+  <meta name="description" content="" />
+  <title>{% block head_title %}{% endblock %}</title>
+    {% block extra_head %}
+    {% endblock %}
+  <link href="{ static 'md/css/bootstrap.min.css' %}" rel="stylesheet">
+ 
+  <link href="{ static 'md/css/mdb.min.css' %}" rel="stylesheet">
+  
+  <link href="{ static 'md/css/style.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/stylesheets/bootstrap.min.css' %}" rel="stylesheet" type="text/css" media="all">  
+    <link href="{% static 'maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css" media="all">
+    <link href="{% static 'assets/stylesheets/fonts.googleapis.css' %}" rel="stylesheet" type="text/css" media="all">
+    <link href="{% static 'assets/stylesheets/font-awesome.min.css' %}" rel="stylesheet" type="text/css" media="all">
+    <link href="{% static 'assets/stylesheets/social-buttons.css' %}" rel="stylesheet" type="text/css" media="all">
+    <link href="{% static 'assets/stylesheets/cs.global.css' %}" rel="stylesheet" type="text/css" media="all"> 
+    <link href="{% static 'assets/stylesheets/cs.styles.css' %}" rel="stylesheet" type="text/css" media="all">
+    <link href="{% static 'assets/stylesheets/owl.carousel.css' %}" rel="stylesheet" type="text/css" media="all">
+    <link href="{% static 'assets/stylesheets/spr.css' %}" rel="stylesheet" type="text/css" media="all">
+     
+    <script type="text/javascript" src="{% static 'assets/javascripts/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/javascripts/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/javascripts/classie.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/javascripts/scripts.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/javascripts/jquery.flexslider.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/javascripts/jquery.zoom.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/javascripts/owl.carousel.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/javascripts/cs.script.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/javascripts/cs.optionSelect.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/javascripts/jquery.currencies.min.js' %}" ></script>
+</head>
+
+<body class=" no_rtl  index-template">
+
+  
+
+  <!--Header-->
+  <header id="top" class="header clearfix fadeInDown">
+    <section class="top-header">
+      <div class="top-header-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="top-header-inner">
+              <div class="left-area hidden-xs">
+                <div class="translate_group hidden-xs">
+                  <div class="translate-switcher">
+                    <div class="translate btn-group uppercase">
+                      <a class="translate_wrapper dropdown-toggle" data-toggle="dropdown">
+                        <i class="sub-dropdown1 visible-sm visible-md visible-lg"></i>
+                        <i class="sub-dropdown visible-sm visible-md visible-lg"></i>
+                        <img class="translate_img" src="{% static 'assets/images/translate_language_1.png' %}" alt="">
+                        <span class="translate_code heading hidden-xs">English</span>
+                        <span class="translate_code visible-xs">English</span>
+                        <i class="fa fa-caret-down"></i>
+                      </a>
+                      <ul class="translate dropdown-menu text-left translate_language">
+                        <li class="currency currency-English active">
+                          <a href="javascript:;">English</a>
+                          <input type="hidden" value="English">
+                        </li>
+                        <li class="currency currency-France ">
+                          <a href="javascript:;">France</a>
+                          <input type="hidden" value="France">
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <!-- Currency -->
+                <div class="currency_group hidden-xs">
+                  <div class="currencies-switcher">
+                    <div class="currency btn-group uppercase">
+                      <a class="currency_wrapper dropdown-toggle" data-toggle="dropdown">
+                        <i class="sub-dropdown1 visible-sm visible-md visible-lg"></i>
+                        <i class="sub-dropdown visible-sm visible-md visible-lg"></i>
+                        <span class="currency_code heading hidden-xs">USD</span>
+                        <span class="currency_code visible-xs">USD</span>
+                        <i class="fa fa-caret-down"></i>
+                      </a>
+                      <ul class="currencies dropdown-menu text-left">
+                        <li class="currency-USD active">
+                          <a href="javascript:;">USD</a>
+                          <input type="hidden" value="USD">
+                        </li>
+                        <li class="currency-NGN">
+                          <a href="javascript:;">NGN</a>
+                          <input type="hidden" value="NGN">
+                     
+                     
+                        
+                      
+                        
+                      </ul>
+                      <select class="currencies_src hide" name="currencies">
+                        <option value="USD" selected="selected">USD</option>
+                        <option value="NGN">NGN</option>
+                        
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="right-area hidden-xs">
+              <!-- Customer Links -->
+              
+                <ul class="unstyled">
+                  {% if request.user.is_authenticated %}
+                  <li class="toolbar-customer my-wishlist">
+                    <a href="#"  class="dropdown-toggle dropdown-link" data-toggle="dropdown"><span>{{user.username}}</span>
+                      <i class="fa fa-caret-right" aria-hidden="true"></i>
+                      <i class="sub-dropdown1  visible-sm visible-md visible-lg"></i>
+                      <i class="sub-dropdown visible-sm visible-md visible-lg"></i>
+                    </a>
+                    <ul class="dropdown-menu"> 
+                      <li class="li-sub-mega">
+                        <a tabindex="-1" href="#">List a Product </a>
+                      </li>
+                      <li class="li-sub-mega">
+                        <a tabindex="-1" href="#">My Wishlist</a>
+                      </li>
+                      <li class="li-sub-mega">
+                        <a tabindex="-1" href="#">My Messages</a>
+                      </li>
+                      <li class="li-sub-mega">
+                        <a tabindex="-1" href="#">My Purchases</a>
+                      </li>
+                      <li class="li-sub-mega">
+                        <a tabindex="-1" href="#">Update Profile</a>
+                      </li>
+                      <li class="li-sub-mega">
+                        <a tabindex="-1" href="{% url 'account_logout' %}">Logout</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="toolbar-customer my-wishlist">
+                    <a href="{% url 'account_logout' %}">LogOut</a>
+                  </li>
+                    {% else %}
+                  <li class="toolbar-customer login-account">                    
+                   
+                                         
+                      <a href="{% url 'account_login' %}">Login</a>
+                    </span>                    
+                    
+                  </li>
+                  <li class="toolbar-customer log-out">
+                    <a href="{% url 'account_signup' %}">Register</a>
+                  </li>
+                  {% endif %}
+                 
+                </ul>
+              </div>            
+            </div>
+          </div>
+        </div>
+      </div>
+     
+    </section>
+    <section class="main-header">
+      <div class="main-header-wrapper">
+        <div class="container clearfix">
+          <div class="row">
+            <div class="main-header-inner">
+              <div class="nav-top">
+                <div class="nav-logo">
+                  <h1><a href="/"><img src="{% static 'assets/images/logo.png' %}" alt="Advant Healthcare Products & Services"></a></h1>
+                  <h1 style="display:none"><a href="#">Advandt Health</a></h1>
+                </div>
+                <div class="nav-top-left">
+                  <div class="nav-search">
+                    <form class="search" action="#">
+                      <div class="collections-selector">
+                        <select class="single-option-selector" data-option="collection-option" id="collection-option" name="collection">
+                          <option value="all">All Categories</option>
+                          <option value="autumn-collection">Pharmacy</option>
+                          <option value="dresses">Medicine</option>
+                          <option value="jeans">Cosmetics</option>
+                          <option value="shorts">Medical Equipments</option>
+                          <option value="skirts">Services</option>
+                          <option value="spring-collection">Consultancy</option>
+                        
+                        </select>
+                      </div>
+                      <input type="hidden" name="type" value="product">
+                      <input type="text" name="q" class="search_box" placeholder="Enter your keyword ..." value="">
+                      <input type="image" src="{% static 'assets/images/icon-search.png' %}" alt="Go">
+                    </form>
+                  </div>
+                   {% if user.is_authenticated %}
+                  
+                  <div class="nav-cart has-items" id="cart-target">
+                    
+                    <div class="cart-info-group">
+                    
+                      <a href="{% url 'store:order-summary' %}" class="cart dropdown-toggle dropdown-link" data-toggle="dropdown">
+                        <i class="sub-dropdown1 visible-sm visible-md visible-lg"></i>
+                        <i class="sub-dropdown visible-sm visible-md visible-lg"></i> 
+                        <div class="num-items-in-cart">
+                          <div class="items-cart-left">
+                            <img class="cart_img" src="{% static 'assets/images/bg-cart.png' %}" alt="">
+                            <span class="cart_text icon"><span class="number">{{ user|cart_item_count }}</span></span>       
+                          </div>
+                        </div>
+                      </a>
+                     
+                      <div class="cart-info dropdown-menu" style="display: none;">
+                        <div class="cart-content">
+                        <div class="items control-container">
+                          <div class="row">
+                          <a class="cart-close" title="Remove" href="javascript:void(0);" onclick="">
+                            <i class="fa fa-times"></i>
+                          </a>
+                          <div class="cart-left col-sm-4">
+                            <a class="cart-image" href="{% url 'store:order-summary' %}">
+                            <img src="{% static 'assets/images/2_compact.jpg' %}" alt="" title="">
+                            </a>
+                          </div>
+                          <div class="cart-right col-sm-8">
+                            <div class="cart-title">
+                            <a href="{% url 'store:order-summary' %}">{{ object.title }} 1 - XL / black</a>
+                            </div>
+                            <div class="cart-price">
+                            <span class="money" data-currency-usd="$200.00" data-currency="USD">${{ object.price }}</span>
+                            <span class="x"> x1</span>
+                            </div>
+                          </div>
+                          </div>
+                          <div class="row">
+                          <a class="cart-close" title="Remove" href="#" onclick="">
+                            <i class="fa fa-times"></i>
+                          </a>
+                          
+                         
+                            
+                          </div>
+                         
+                          </div>
+                          
+                        </div>
+                        
+                        <div class="subtotal">
+                          <span>Subtotal:</span>
+                          <span class="cart-total-right money" style="font-family:currencies" data-currency-usd="$459.00" data-currency="USD">$459.00</span>
+                        </div>
+                        <div class="action">
+                          <button class="btn btn-3 float-right" onclick="window.location='/checkout/'">
+                          <span>CHECKOUT</span>
+                          <i class="fa fa-caret-right"></i>
+                          </button>
+                          <button class="btn btn-2" onclick="window.location='{% url 'store:order-summary' %}'">
+                          <span>View Cart</span>
+                          <i class="fa fa-caret-right"></i>
+                          </button>
+                        </div>
+                        </div>
+                       
+                      </div>
+                    
+                    </div>  
+                               
+                  </div>
+                  
+                  {% endif %}
+                </div>            
+              </div>
+              
+              <div class="navigation_area">
+                <div class="navigation_left">    
+                  <div class="group_navbtn">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                    <span class="dropdown-toggle" data-toggle="dropdown">
+                      Categories
+                    </span>
+                    <ul class="navigation_links_left dropdown-menu">
+                      <li class="nav-item dropdown navigation">
+                        <a href="collections.html" class="dropdown-toggle dropdown-link" data-toggle="dropdown">
+                          <img src="{% static 'assets/images/cookware-casseroles.png' %}" alt="cookware-casseroles" onerror="this.remove();">
+                          <span>Pharmacy</span>
+                          <i class="fa fa-caret-right" aria-hidden="true"></i>
+                          <i class="sub-dropdown1  visible-sm visible-md visible-lg"></i>
+                          <i class="sub-dropdown visible-sm visible-md visible-lg"></i>
+                        </a>
+                        <ul class="dropdown-menu"> 
+                          <li class="li-sub-mega">
+                            <a tabindex="-1" href="#">Sell Your Pharmacy</a>
+                          </li>
+                          <li class="li-sub-mega">
+                            <a tabindex="-1" href="#">Affiliate Program</a>
+                          </li>
+                          <li class="li-sub-mega">
+                            <a tabindex="-1" href="#">Careers</a>
+                          </li>
+                          <li class="li-sub-mega">
+                            <a tabindex="-1" href="#">Investor Relations</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="nav-item dropdown navigation">
+                        <a href="#" class="dropdown-toggle dropdown-link" data-toggle="dropdown">
+                          <img src="{% static 'assets/images/clothing-vetements.png' %}" alt="clothing-vetements" onerror="this.remove();">
+                          <span>Medical Equipments</span>
+                          <i class="fa fa-caret-right" aria-hidden="true"></i>
+                          <i class="sub-dropdown1  visible-sm visible-md visible-lg"></i>
+                          <i class="sub-dropdown visible-sm visible-md visible-lg"></i>
+                        </a>
+                        <ul class="dropdown-menu"> 
+                          <li class="li-sub-mega">
+                            <a tabindex="-1" href="#">Product recall</a>
+                          </li>
+                          <li class="li-sub-mega">
+                            <a tabindex="-1" href="#">Gift vouchers</a>
+                          </li>
+                          <li class="li-sub-mega">
+                            <a tabindex="-1" href="#">Returns and exchanges</a>
+                          </li>
+                          <li class="li-sub-mega">
+                            <a tabindex="-1" href="#">Blogs</a>
+                          </li>
+                          <li class="li-sub-mega">
+                            <a tabindex="-1" href="#">Help &amp; FAQs</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="nav-item dropdown navigation">
+                        <a href="#" class="dropdown-toggle dropdown-link" data-toggle="dropdown">
+                          <img src="{% static 'assets/images/accessories-accessoires.png' %}" alt="accessories-accessoires" onerror="this.remove();">
+                          <span>Products </span>
+                          <i class="fa fa-caret-right" aria-hidden="true"></i>
+                          <i class="sub-dropdown1  visible-sm visible-md visible-lg"></i>
+                          <i class="sub-dropdown visible-sm visible-md visible-lg"></i>
+                        </a>
+                        <ul class="dropdown-menu"> 
+                          <li class="li-sub-mega">
+                            <a tabindex="-1" href="#">Medicine </a>
+                          </li>
+                          <li class="li-sub-mega">
+                            <a tabindex="-1" href="#">Cosmetics</a>
+                          </li>
+                          <li class="li-sub-mega">
+                            <a tabindex="-1" href="#">Fitness</a>
+                          </li>
+                          <li class="li-sub-mega">
+                            <a tabindex="-1" href="#">Devices</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="nav-item dropdown navigation">
+                        <a href="#" class="dropdown-toggle dropdown-link" data-toggle="dropdown">
+                          <img src="{% static 'assets/images/wallet-portefeuille.png' %}" alt="wallet-portefeuille" onerror="this.remove();">
+                          <span>Lifestyle</span>
+                          <i class="fa fa-caret-right" aria-hidden="true"></i>
+                          <i class="sub-dropdown1  visible-sm visible-md visible-lg"></i>
+                          <i class="sub-dropdown visible-sm visible-md visible-lg"></i>
+                        </a>
+                        <ul class="dropdown-menu"> 
+                          <li class="li-sub-mega">
+                            <a tabindex="-1" href="#">Personal Care</a>
+                          </li>
+                          <li class="li-sub-mega">
+                            <a tabindex="-1" href="#">Hygiene </a>
+                          </li>
+                          <li class="li-sub-mega">
+                            <a tabindex="-1" href="#">Family Care </a>
+                          </li>
+                          <li class="li-sub-mega">
+                            <a tabindex="-1" href="#">Shopping </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="nav-item">
+                        <a href="#">
+                        <img src="{% static 'assets/images/furniture-meubles.png' %}" alt="furniture-meubles" onerror="this.remove();">
+                        <span>Cardiology</span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="#">
+                        <img src="{% static 'assets/images/machines.png' %}" alt="machines" onerror="this.remove();">
+                        <span>Machines</span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="#">
+                        <img src="{% static 'assets/images/bag.png' %}" alt="bag" onerror="this.remove();">
+                        <span>Medical Equipments</span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="#">
+                        <img src="{% static 'assets/images/tools.png' %}" alt="tools" onerror="this.remove();">
+                        <span>Health Products</span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="#">
+                        <img src="{% static 'assets/images/lights.png' %}" alt="lights" onerror="this.remove();">
+                        <span>Medlife</span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="#">
+                        <img src="{% static 'assets/images/speaker.png' %}" alt="speaker" onerror="this.remove();">
+                        <span>Naturally Good</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div> 
+                </div>
+                <div class="navigation_right">
+                  <ul class="navigation_links">
+                    <li class="nav-item active">
+                      <a href="/">
+                      <span>Home </span>
+                      </a>
+                    </li>
+                    <li class="nav-item dropdown navigation">
+                      <a href="collections_all.html" class="dropdown-toggle dropdown-link" data-toggle="dropdown">
+                        <span>Medical Services </span>
+                        <i class="fa fa-angle-down"></i>
+                        <i class="sub-dropdown1  visible-sm visible-md visible-lg"></i>
+                        <i class="sub-dropdown visible-sm visible-md visible-lg"></i>
+                      </a>
+                      <ul class="dropdown-menu">    
+                        
+                        <li class="li-sub-mega">
+                          <a tabindex="-1" href="#">Medical Consultation</a>
+                        </li>
+                        <li class="li-sub-mega">
+                          <a tabindex="-1" href="#">Book an Appointment</a>
+                        </li>
+                        <li class="li-sub-mega">
+                          <a tabindex="-1" href="#">Health Care</a>
+                        </li>
+                        <li class="li-sub-mega">
+                          <a tabindex="-1" href="#">Family Care</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="dropdown mega-menu">
+                      <a href="{% url 'store:item-lists' %}" class="dropdown-toggle dropdown-link" data-toggle="dropdown">
+                        <span>Product</span>
+                        
+                      </a>
+                       
+                    </li>
+                    <li class="dropdown mega-menu">
+                      <a href="wish-list.html" class="dropdown-toggle dropdown-link" data-toggle="dropdown">
+                        <span>About Us </span>
+                        <i class="fa fa-angle-down"></i>
+                        <i class="sub-dropdown1 visible-sm visible-md visible-lg"></i>
+                        <i class="sub-dropdown visible-sm visible-md visible-lg"></i>
+                      </a>
+                      <div class="megamenu-container megamenu-container-2 dropdown-menu" style="width: 1170px; background-image: url(_/assets/images/mega-bg-02.html);">
+                        <ul class="sub-mega-menu">
+                          <li class="mega2-collumn1 col-sm-2">
+                            <ul>
+                              <li class="list-title">About us </li>
+                              <li class="list-unstyled li-sub-mega">
+                                <a href="about-us.html">About us </a>           
+                              </li>
+                              <li class="list-unstyled li-sub-mega">
+                                <a href="#">Shopping guide </a>           
+                              </li>
+                              <li class="list-unstyled li-sub-mega">
+                                <a href="#">Delivery information </a>           
+                              </li>
+                              <li class="list-unstyled li-sub-mega">
+                                <a href="#">Privacy policy </a>           
+                              </li>
+                              <li class="list-unstyled li-sub-mega">
+                                <a href="#">Sitemap </a>           
+                              </li>
+                            </ul>
+                          </li>
+                          <li class="mega2-column2 col-sm-5">
+                            <div class="col-image col-sm-6"><img src="{% static 'assets/images/mega2-col1-img.jpg' %}" alt=""></div>
+                            <div class="col-text col-sm-6"><p class="heading">End hunger lasting</p>
+                              <p class="content">Vaccines cause save the world beneficiaries agency global environmental public sector recognition. </p>
+                              <p class="linkto"><a href="#">Read more <i class="fa fa-angle-double-right"></i></a></p>
+                            </div>
+                          </li>
+                          <li class="mega2-column2 col-sm-5">
+                            <div class="col-image col-sm-6"><img src="{% static 'assets/images/mega2-col2-img.jpg' %}" alt=""></div>
+                            <div class="col-text col-sm-6"><p class="heading">End hunger lasting</p>
+                            <p class="content">Vaccines cause save the world beneficiaries agency global environmental public sector recognition. </p>
+                            <p class="linkto"><a href="#">Read more <i class="fa fa-angle-double-right"></i></a></p></div>
+                          </li>
+                        </ul>
+                        <script>
+                        $(window).ready(function($) {
+                          $('.megamenu-container-2').css("width",$('.main-header-inner').innerWidth());
+                        });
+                        $( window ).resize(function() {
+                          $('.megamenu-container-2').css("width",$('.main-header-inner').innerWidth());
+                        });
+                        </script>
+                      </div>
+                    </li>
+                    <li class="nav-item">
+                      <a href="super-deal.html">
+                        <span>Deal </span>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="blog.html">
+                      <span>FAQ </span>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="lookbook.html">
+                      <span>Contact Us</span>
+                      </a>
+                    </li>
+                  </ul>  
+                </div>
+                <div class="navigation_icon">
+                  <div class="icon_search">
+                    <a href="search.html" class="dropdown-toggle dropdown-link" data-toggle="dropdown">
+                      <i class="fa fa-search" aria-hidden="true"></i>
+                      <i class="sub-dropdown1 visible-sm visible-md visible-lg"></i>
+                      <i class="sub-dropdown visible-sm visible-md visible-lg"></i> 
+                    </a>
+                    <div id="search-info" class="dropdown-menu">
+                      <form class="search" action="#">
+                        <input type="hidden" name="type" value="product">
+                        <input type="image" src="{% static 'assets/images/icon-search.png' %}" alt="Go">
+                        <input type="text" name="q" class="search_box" placeholder="Enter your keyword ..." value="">
+                      </form> 
+                    <!--<div class="fix_search_dropdown" style="opacity:0; height:200px;background:transparent;"></div>-->
+                    </div>
+                  </div>
+                  {% if user.is.authenticated %}
+                  <div class="icon_cart">
+                    <div class="cart-info-group">
+                      <a href="cart.html" class="cart dropdown-toggle dropdown-link" data-toggle="dropdown">
+                        <i class="sub-dropdown1 visible-sm visible-md visible-lg"></i>
+                        <i class="sub-dropdown visible-sm visible-md visible-lg"></i> 
+                        <div class="num-items-in-cart">
+                          <div class="items-cart-left">
+                          <img class="cart_img" src="{% static 'assets/images/bg-cart.png' %}" alt="">
+                          <span class="cart_text icon"><span class="number">2</span></span>       
+                          </div>
+                        </div>
+                      </a>
+                      <div class="cart-info dropdown-menu" style="display: none;">
+                        <div class="cart-content">
+                        <div class="items control-container">
+                          <div class="row">
+                          <a class="cart-close" title="Remove" href="javascript:void(0);" onclick="">
+                            <i class="fa fa-times"></i>
+                          </a>
+                          <div class="cart-left col-sm-4">
+                            <a class="cart-image" href="product.html">
+                            <img src="{% static 'assets/images/2_compact.jpg' %}" alt="" title="">
+                            </a>
+                          </div>
+                          <div class="cart-right col-sm-8">
+                            <div class="cart-title">
+                            <a href="product.html">Homme Eau Extreme 5 - XL / black</a>
+                            </div>
+                            <div class="cart-price">
+                            <span class="money" data-currency-usd="$200.00" data-currency="USD">$200.00</span>
+                            <span class="x"> x1</span>
+                            </div>
+                          </div>
+                          </div>
+                          <div class="row">
+                          <a class="cart-close" title="Remove" href="javascript:void(0);" onclick="">
+                            <i class="fa fa-times"></i>
+                          </a>
+                          <div class="cart-left col-sm-4">
+                            <a class="cart-image" href="products.html">
+                            <img src="{% static 'assets/images/13_compact.jpg' %}" alt="" title="">
+                            </a>
+                          </div>
+                          <div class="cart-right col-sm-8">
+                            <div class="cart-title">
+                            <a href="products.html">Homme Eau Extreme 1 - XL / black</a>
+                            </div>
+                            <div class="cart-price">
+                            <span class="money" data-currency-usd="$259.00" data-currency="USD">$259.00</span>
+                            <span class="x"> x1</span>
+                            </div>
+                          </div>
+                          </div>
+                        </div>
+                        <div class="subtotal">
+                          <span>Subtotal:</span>
+                          <span class="cart-total-right money" style="font-family:currencies" data-currency-usd="$459.00" data-currency="USD">$459.00</span>
+                        </div>
+                        <div class="action">
+                          <button class="btn btn-3 float-right" onclick="window.location='index-2.html'">
+                          <span>CHECKOUT</span>
+                          <i class="fa fa-caret-right"></i>
+                          </button>
+                          <button class="btn btn-2" onclick="window.location='cart.html'">
+                          <span>View Cart</span>
+                          <i class="fa fa-caret-right"></i>
+                          </button>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {% endif %}
+                </div>
+              </div>  
+              <div class="mobile-navigation">
+                <div class="nav-search visible-xs">
+                  <form class="search" action="http://demo.themeforshop.com/html_comeback/organiccosmeticsstore/search.html">               
+                    <input type="hidden" name="type" value="product">
+                    <input type="text" name="q" class="search_box" placeholder="Enter your keyword ..." value="">
+                    <input type="image" src="{% static 'assets/images/icon-search.png' %}" alt="Go">
+                  </form>
+                </div>
+                <div class="icon_cart visible-xs">
+                  <div class="cart-info-group">
+                    <a href="cart.html" class="cart dropdown-toggle dropdown-link">
+                      <i class="sub-dropdown1 visible-sm visible-md visible-lg"></i>
+                      <i class="sub-dropdown visible-sm visible-md visible-lg"></i> 
+                      <div class="num-items-in-cart">
+                        <div class="items-cart-left">
+                        <img class="cart_img" src="{% static 'assets/images/bg-cart.png' %}" alt="">
+                        <span class="cart_text icon"><span class="number">2</span></span>       
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="mobile-navigation-inner">
+                  <button id="showLeftPush" class="visible-xs">
+                    <i class="fa fa-bars fa-2x"></i>
+                  </button>
+                  <div class="mobile-navigation-content">
+                    <div class="mobile-top-navigation visible-xs">
+                      <div class="mobile-content-top">
+                        <div class="mobile-language-currency">
+                          <div class="currencies-switcher"> 
+                            <div class="currency btn-group uppercase">
+                              <a class="currency_wrapper dropdown-toggle" data-toggle="dropdown">
+                                <i class="sub-dropdown1 visible-sm visible-md visible-lg"></i>
+                                <i class="sub-dropdown visible-sm visible-md visible-lg"></i>
+                                <span class="currency_code heading hidden-xs">USD</span>
+                                <span class="currency_code visible-xs">USD</span>
+                                <i class="fa fa-caret-down"></i>
+                              </a>
+                              <ul class="currencies dropdown-menu text-left">
+                                <li class="currency-USD active">
+                                  <a href="javascript:;">USD</a>
+                                  <input type="hidden" value="USD">
+                                </li>
+                                <li class="currency-INR">
+                                  <a href="javascript:;">INR</a>
+                                  <input type="hidden" value="INR">
+                                </li>
+                                <li class="currency-GBP">
+                                  <a href="javascript:;">GBP</a>
+                                  <input type="hidden" value="GBP">
+                                </li>
+                                <li class="currency-CAD">
+                                  <a href="javascript:;">CAD</a>
+                                  <input type="hidden" value="CAD">
+                                </li>
+                                <li class="currency-AUD">
+                                  <a href="javascript:;">AUD</a>
+                                  <input type="hidden" value="AUD">
+                                </li>
+                                <li class="currency-EUR">
+                                  <a href="javascript:;">EUR</a>
+                                  <input type="hidden" value="EUR">
+                                </li>
+                                <li class="currency-JPY">
+                                  <a href="javascript:;">JPY</a>
+                                  <input type="hidden" value="JPY">
+                                </li>
+                              </ul>
+                              <select class="currencies_src hide" name="currencies">
+                                <option value="USD" selected="selected">USD</option>
+                                <option value="INR">INR</option>
+                                <option value="GBP">GBP</option>
+                                <option value="CAD">CAD</option>
+                                <option value="AUD">AUD</option>
+                                <option value="EUR">EUR</option>
+                                <option value="JPY">JPY</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="translate-switcher">
+                            <div class="translate btn-group uppercase">
+                              <a class="translate_wrapper dropdown-toggle" data-toggle="dropdown">
+                                <i class="sub-dropdown1 visible-sm visible-md visible-lg"></i>
+                                <i class="sub-dropdown visible-sm visible-md visible-lg"></i>
+                                <img class="translate_img" src="{% static 'assets/images/translate_language_1.png' %}" alt="">
+                                <span class="translate_code heading hidden-xs">English</span>
+                                <span class="translate_code visible-xs">English</span>
+                                <i class="fa fa-caret-down"></i>
+                              </a>
+                              <ul class="translate dropdown-menu text-left translate_language">
+                                <li class="currency currency-English active">
+                                  <a href="javascript:;">English</a>
+                                  <input type="hidden" value="English">
+                                </li>
+                                <li class="currency currency-France ">
+                                  <a href="javascript:;">France</a>
+                                  <input type="hidden" value="France">
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="mobile-top-account">                      
+                          <div class="is-mobile-login">                        
+                            <ul class="customer">
+                              <li class="logout">
+                                <a href="login.html"><i class="fa fa-user" aria-hidden="true"></i><span data-translate1="layout.customer.login">Login</span></a>
+                              </li>
+                              <li class="account">
+                                <a href="register.html"><i class="fa fa-user-plus" aria-hidden="true"></i><span data-translate1="layout.customer.create_account">Register</span></a>
+                              </li>
+                              <li class="is-mobile-cart">
+                                <a href="cart.html">
+                                  <div class="num-items-in-cart">
+                                    <i class="fa fa-shopping-cart"></i>
+                                    <span>
+                                    Cart
+                                    </span>
+                                    <div class="ajax-subtotal" style="display:none;"></div>
+                                  </div>
+                                </a>
+                              </li>
+                            </ul>                        
+                          </div>
+                        </div>
+                      </div>
+                    </div>              
+                    <div class="nav-menu visible-xs leftnavi" id="is-mobile-nav-menu">
+                      <div class="is-mobile-menu-content">
+                        <div class="mobile-content-link">
+                          <ul class="nav navbar-nav hoverMenuWrapper">
+                            <li class="nav-item active">
+                              <a href="index-2.html">
+                              Home 
+                              </a>
+                            </li>
+                            <li class="nav-item navigation navigation_mobile">
+                              <a href="collections_all.html" class="menu-mobile-link">
+                              Shop 
+                              </a>
+                              <a href="javascript:void(0)" class="arrow">
+                                <i class="fa fa-angle-down"></i>
+                              </a>
+                              <ul class="menu-mobile-container" style="display: none;">
+                                <li class=" li-sub-mega navigation_mobile_1">
+                                  <a href="#" class="menu-mobile-link">
+                                    <span>Shorts </span>
+                                  </a>
+                                  <a href="javascript:void(0)" class="arrow_1">
+                                    <i class="fa fa-angle-down"></i>
+                                  </a>
+                                  <ul class="menu-mobile-container_1" style="display: none;"> 
+                                    <script>
+                                      $(window).ready(function() { 
+                                        $('.navigation_mobile_1 .arrow_1').click(function(){
+                                          if($(this).attr('class')=='arrow_1 class_test'){
+                                            $('.navigation_mobile_1 .arrow_1').removeClass('class_test');
+                                            $('.navigation_mobile_1').removeClass('active');
+                                            $('.navigation_mobile_1').find('.menu-mobile-container_1').hide("slow");
+                                          }
+                                          else{
+                                            $('.navigation_mobile_1 .arrow_1').addClass('class_test');
+                                            $('.navigation_mobile_1').addClass('active');
+                                            $('.navigation_mobile_1').find('.menu-mobile-container_1').show("slow");
+                                          }
+                                        });
+                                      });
+                                    </script>
+                                    <li class=" li-sub-mega">
+                                      <a tabindex="-1" href="#">Spring Collection</a>
+                                    </li>
+                                    <li class=" li-sub-mega">
+                                      <a tabindex="-1" href="#">Summer Collection</a>
+                                    </li>
+                                    <li class=" li-sub-mega">
+                                      <a tabindex="-1" href="#">Autumn Collection</a>
+                                    </li>
+                                    <li class=" li-sub-mega">
+                                      <a tabindex="-1" href="#">Winter Collection</a>
+                                    </li>
+                                  </ul>
+                                </li>
+                                <li class=" li-sub-mega">
+                                  <a tabindex="-1" href="#">Dresses </a>
+                                </li>
+                                <li class=" li-sub-mega">
+                                  <a tabindex="-1" href="#">Trousers </a>
+                                </li>
+                                <li class=" li-sub-mega">
+                                  <a tabindex="-1" href="#">Skirts </a>
+                                </li>
+                                <li class=" li-sub-mega">
+                                  <a tabindex="-1" href="#">Jeans </a>
+                                </li>
+                              </ul>
+                            </li>
+                            <li class="nav-item  navigation_mobile">
+                              <a href="collections.html" class="menu-mobile-link">
+                                Templates 
+                              </a>
+                              <a href="javascript:void(0)" class="arrow">
+                                <i class="fa fa-angle-down"></i>
+                              </a>
+                              <div class="menu-mobile-container" style="display: none;">
+                                <ul class="sub-mega-menu">
+                                  <li class="mega1-collumn1">
+                                    <ul>
+                                      <li class="list-title">About us 1 </li>
+                                      <li class="list-unstyled li-sub-mega">
+                                        <a href="#">Store Locations </a>           
+                                      </li>
+                                      <li class="list-unstyled li-sub-mega">
+                                        <a href="#">Whosesalers </a>           
+                                      </li>
+                                      <li class="list-unstyled li-sub-mega">
+                                        <a href="#">Map site </a>           
+                                      </li>
+                                      <li class="list-unstyled li-sub-mega">
+                                        <a href="#">Contact Us </a>           
+                                      </li>
+                                    </ul>
+                                  </li>
+                                  <li class="mega1-collumn2">
+                                    <ul>
+                                      <li class="list-title">Accessories </li>
+                                      <li class="list-unstyled li-sub-mega">
+                                        <a href="#">Jewellery </a>           
+                                      </li>
+                                      <li class="list-unstyled li-sub-mega">
+                                        <a href="#">Sunglasses </a>           
+                                      </li>
+                                      <li class="list-unstyled li-sub-mega">
+                                        <a href="#">Scarves </a>           
+                                      </li>
+                                      <li class="list-unstyled li-sub-mega">
+                                        <a href="#">Headwear </a>           
+                                      </li>
+                                    </ul>
+                                  </li>
+                                  <li class="mega1-collumn3">
+                                    <ul>
+                                      <li class="list-title">Shorts </li>
+                                      <li class="list-unstyled li-sub-mega">
+                                        <a href="#">Spring Collection</a>           
+                                      </li>
+                                      <li class="list-unstyled li-sub-mega">
+                                        <a href="#">Summer Collection</a>           
+                                      </li>
+                                      <li class="list-unstyled li-sub-mega">
+                                        <a href="#">Autumn Collection</a>           
+                                      </li>
+                                      <li class="list-unstyled li-sub-mega">
+                                        <a href="#">Winter Collection</a>           
+                                      </li>
+                                    </ul>
+                                  </li>
+                                  <li class="mega1-collumn4">
+                                    <ul>
+                                      <li class="list-title">Information </li>
+                                      <li class="list-unstyled li-sub-mega">
+                                        <a href="#">Help &amp; FAQs </a>           
+                                      </li>
+                                      <li class="list-unstyled li-sub-mega">
+                                        <a href="#">Advance Search </a>           
+                                      </li>
+                                      <li class="list-unstyled li-sub-mega">
+                                        <a href="#">Gift Cards </a>           
+                                      </li>
+                                      <li class="list-unstyled li-sub-mega">
+                                        <a href="#">Shop By Brands </a>           
+                                      </li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                              </div>
+                            </li>
+                            <li class="nav-item  navigation_mobile">
+                              <a href="wish-list.html" class="menu-mobile-link">
+                                Mega Menu 
+                              </a>
+                              <a href="javascript:void(0)" class="arrow">
+                                <i class="fa fa-angle-down"></i>
+                              </a>
+                              <div class="menu-mobile-container" style="display: none;">
+                                <ul class="sub-mega-menu">
+                                  <li class="mega2-collumn1">
+                                    <ul>
+                                      <li class="list-title">About us </li>
+                                      <li class="list-unstyled li-sub-mega">
+                                        <a href="about-us.html">About us </a>           
+                                      </li>
+                                      <li class="list-unstyled li-sub-mega">
+                                        <a href="#">Shopping guide </a>           
+                                      </li>
+                                      <li class="list-unstyled li-sub-mega">
+                                        <a href="#">Delivery information </a>           
+                                      </li>
+                                      <li class="list-unstyled li-sub-mega">
+                                        <a href="#">Privacy policy </a>           
+                                      </li>
+                                      <li class="list-unstyled li-sub-mega">
+                                        <a href="#">Sitemap </a>           
+                                      </li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                              </div>
+                            </li>
+                            <li class="nav-item">
+                              <a href="super-deal.html">
+                                Deal 
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a href="blog.html">
+                                Blog 
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a href="lookbook.html">
+                                Lookbook 
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>              
+                </div>           
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="mt-5"></div> {% if messages %}
+      {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}" role="alert">
+      {{ message }}
+    </div>
+    {% endfor %}
+{% endif %}
+    </section>
+    
+    <script>
+      function addaffix(scr){
+        if($(window).innerWidth() >= 992){
+          if(scr > 215){
+            if(!$('#top').hasClass('affix')){
+              $('#top').addClass('affix').addClass('');
+            }
+          }
+          else{
+            if($('#top').hasClass('affix')){
+              $('#top').prev().remove();
+              $('#top').removeClass('affix').removeClass('');
+            }
+          }
+        }
+        else $('#top').removeClass('affix');
+      }
+      $(window).scroll(function() {
+        var scrollTop = $(this).scrollTop();
+        addaffix(scrollTop);
+      });
+      $( window ).resize(function() {
+        var scrollTop = $(this).scrollTop();
+        addaffix(scrollTop);
+      });
+    </script>
+  </header>
+  
+  {% block content %}
+  {% endblock %}
+  {% block extra_body %}
+  {% endblock %}
+                     <!--Footer-->
+  <div class="float-right-icon">
+    <ul>
+      <li>
+        <div id="scroll-to-top" data-toggle="" data-placement="left" title="Scroll to Top" class="animated off fadeInRight">
+          <i class="fa fa-angle-up"></i>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <footer class="footer">
+    <section class="footer_newsletter_block">
+      <div class="footer_newsletter_wrapper">  
+      <div class="container">
+        <div class="row">
+        <div class="footer_newsletter_inner">          
+          <div class="newsletter_wrapper">    
+          <div class="newsletter_title_group">
+            <div class="newsletter_title">
+            <h5>Newsletter</h5>              
+            </div>
+            <div class="newsletter_content">
+            We promise only send the good things
+            </div>
+          </div>
+          <form action="#" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">                    
+            <input type="email" class="form-control" value="" placeholder="Email your email address" name="EMAIL" id="mail">
+            <button type="submit" class="btn_newsletter_send" name="subscribe" id="subscribe"><i class="fa fa-paper-plane-o"></i></button>
+          </form>
+          <div class="footer_social">
+            <a href="https://www.facebook.com/shopify" title="Comeback For Mobilestore on Facebook" class="icon-social facebook"><i class="fa fa-facebook"></i></a>
+            <a href="https://twitter.com/shopify" title="Comeback For Mobilestore on Twitter" class="icon-social twitter"><i class="fa fa-twitter"></i></a>            
+            <a href="https://plus.google.com/+shopify" title="Comeback For Mobilestore on Google+" class="icon-social google-plus"><i class="fa fa-google-plus"></i></a>                        
+            <a href="https://www.pinterest.com/shopify/" title="Comeback For Mobilestore on Pinterest" class="icon-social pinterest"><i class="fa fa-pinterest"></i></a>
+            <a href="https://www.instagram.com/shopify/" title="Comeback For Mobilestore on Instagram" class="icon-social instagram"><i class="fa fa-instagram"></i></a>
+          </div>
+          </div>          
+        </div>       
+        </div>
+      </div>
+      </div>
+    </section>
+    <section class="footer_link_block">
+      <div class="footer_link_wrapper">
+        <div class="container">
+          <div class="row">
+          <div class="footer_link_inner">
+            <div class="footer_link_content"> 
+            <div class="footer_block01 aboutus_links col-ms-3 col-md-3">              
+              <div class="link_title"><h5>About us </h5></div>
+              <div class="link_content">
+              <ul class="link_menu">
+                <li>
+                <a href="#"><span>Store Locations </span></a>
+                </li>
+                <li>
+                <a href="#"><span>Whosesalers </span></a>
+                </li>
+                <li>
+                <a href="#"><span>Map site </span></a>
+                </li>
+                <li>
+                <a href="contact.html"><span>Contact Us </span></a>
+                </li>
+              </ul>
+              </div>             
+            </div>
+            <div class="footer_block02 information_links col-ms-3 col-md-3">              
+              <div class="link_title"><h5>Information</h5></div>
+              <div class="link_content">
+              <ul class="link_menu">
+                <li>
+                <a href="#"><span>Help &amp; FAQs </span></a>
+                </li>
+                <li>
+                <a href="#"><span>Advance Search </span></a>
+                </li>
+                <li>
+                <a href="#"><span>Gift Cards </span></a>
+                </li>
+                <li>
+                <a href="#"><span>Shop By Brands </span></a>
+                </li>
+              </ul>
+              </div>             
+            </div>
+            <div class="footer_block03 account_links col-ms-3 col-md-3">              
+              <div class="link_title"><h5>Account</h5></div>
+              <div class="link_content">
+              <ul class="link_menu">
+                <li>
+                <a href="#"><span>Preferences </span></a>
+                </li>
+                <li>
+                <a href="#"><span>Order History </span></a>
+                </li>
+                <li>
+                <a href="#"><span>Wish List </span></a>
+                </li>
+                <li>
+                <a href="#"><span> Sign In </span></a>
+                </li>
+              </ul>
+              </div>             
+            </div>
+            <div class="footer_block04 contact_links col-ms-3 col-md-3">              
+              <div class="link_title"><h5>Contact us</h5></div>
+              <div class="link_content">
+              <div class="footer_contact_group">
+                <div class="address"><i class="fa fa-home"></i> Media Village , Estate, Ajebo Abeokuta</div>
+                <div class="phone"><i class="fa fa-phone"></i> (+234)-906-671-0064</div>
+                <div class="email"><i class="fa fa-envelope"></i> support@advandt.com</div>
+              </div>
+              </div>             
+            </div>
+            </div>         
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="copy-right">  
+      <div class="copy-right-wrapper">  
+        <div class="container">
+          <div class="row">
+          <div class="copy-right-inner">
+            <div class="copy-right-group">
+            <div class="col-sm-6">
+              <div class="footer_copyright"><span data-translate1="layout.footer.copyright">Copyright</span> © 2023 <a href="index-2.html" title="">ADV&T Healthcare</a>. <span data-translate1="layout.footer.reserved">All Rights Reserved</span></div>  
+            </div>
+            <div class="col-sm-6">
+              <ul class="footer_payment clearfix">
+              <li><img src="{% static 'assets/images/icon-cc-visa.png' %}" alt="Visa"></li>
+              <li><img src="{% static 'assets/images/icon-cc-mastercard.png' %}" alt="MasterCard"></li>
+              <li><img src="{% static 'assets/images/icon-cc-american.png' %}" alt="Amex"></li>
+              <li><img src="{% static 'assets/images/icon-cc-discover.png' %}" alt="Discover"></li>
+              <li><img src="{% static 'assets/images/icon-cc-paypal.png' %}" alt="PayPal"></li>
+              <li><img src="{% static 'assets/images/icon-cc-moneybookers.png' %}" alt="Google Wallet"></li>
+              <li><img src="{% static 'assets/images/icon-cc-western.png' %}" alt="Bitcoin"></li>
+              </ul>
+            </div>  
+            </div>
+          </div>     
+          </div>
+        </div>     
+      </div>
+    </section>    
+  </footer>
+
+
+  <div id="quick-shop-modal" class="modal quick-shop" role="dialog" aria-hidden="true" tabindex="-1" data-width="800" style="display: none;">
+    <div class="modal-dialog fadeIn animated">
+      <div class="modal-content">
+        <div class="modal-header">
+          <i class="close fa fa-times btooltip" data-toggle="tooltip" data-placement="top" title="" data-dismiss="modal" aria-hidden="true" data-original-title="Close"></i>
+        </div>
+        <div class="modal-body">
+          <div class="quick-shop-modal-bg" style="display: none;"></div>
+          <div class="row">
+            <div class="col-md-6 product-image">
+              <div id="quick-shop-image" class="product-image-wrapper">
+                <div id="featuted-image" class="main-image featured">
+                  <img src="{% static 'assets/images/13_large.jpg' %}" alt="">
+                </div>
+                <div id="gallery_main_qs" class="product-image-thumb scroll scroll-mini">
+                  <div class="qs-vertical-slider" style="display:block">
+                    <a class="image-thumb active" href="{% static 'assets/images/13_large.jpg' %}" data-image="{% static 'assets/images/13_large.jpg' %}" data-zoom-image="{% static 'assets/images/13_large.jpg' %}">
+                      <img src="{% static 'assets/images/13_small.jpg' %}" alt="">
+                    </a>
+                    <a class="image-thumb" href="{% static 'assets/images/14_large.jpg' %}" data-image="{% static 'assets/images/14_large.jpg' %}" data-zoom-image="{% static 'assets/images/14_large.jpg' %}">
+                      <img src="{% static 'assets/images/14_small.jpg' %}" alt="">
+                    </a>
+                    <a class="image-thumb" href="{% static 'assets/images/16_large.jpg' %}" data-image="{% static 'assets/images/16_large.jpg' %}" data-zoom-image="{% static 'assets/images/16_large.jpg' %}">
+                      <img src="{% static 'assets/images/16_small.jpg' %}" alt="">
+                    </a>
+                    <a class="image-thumb" href="{% static 'assets/images/1_large.jpg' %}" data-image="{% static 'assets/images/1_large.jpg' %}" data-zoom-image="{% static 'assets/images/1_large.jpg' %}">
+                      <img src="{% static 'assets/images/1_small.jpg' %}" alt="">
+                    </a>
+                  </div>
+                </div>
+                <div class="vertical-slider"></div>
+              </div>
+            </div>
+            <div class="col-md-6 product-information">
+              <div id="quick-shop-container">              
+                <h3 id="quick-shop-title"><a href="product.html">Homme Eau Extreme 1</a></h3>  
+                <div class="rating-star"><span class="shopify-product-reviews-badge" data-id="6537875078"></span></div>
+                <div class="description">
+                  <div id="quick-shop-description" class="text-left">
+                  <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis amet...</p></div>
+                </div>                             
+                <form action="http://demo.themeforshop.com/html_comeback/organiccosmeticsstore/cart.html" method="post" class="variants" id="quick-shop-product-actions" enctype="multipart/form-data">                
+                  <div id="quick-shop-price-container" class="detail-price">
+                    <del class="price_compare" style="font-family:currencies">
+                      <span class="money" data-currency-usd="$300.00" data-currency="USD">$300.00</span>
+                    </del>
+                    <span class="price_sale" style="font-family:currencies">
+                      <span class="money" data-currency-usd="$259.00" data-currency="USD">$259.00</span>
+                    </span>
+                  </div>
+                  <div class="quantity-wrapper clearfix">
+                    <label class="wrapper-title">Quantity</label>
+                    <div class="wrapper">
+                      <span class="qty-down" title="Decrease" data-src="#qs-quantity">
+                        <i class="fa fa-minus"></i>
+                      </span>
+                      <input type="text" id="qs-quantity" size="5" class="item-quantity item-quantity-qs" name="quantity" value="1">
+                      <span class="qty-up" title="Increase" data-src="#qs-quantity">
+                        <i class="fa fa-plus"></i>
+                      </span>
+                    </div>
+                  </div>   
+                  <div class="swatch" id="show_swatch">
+                    <div id="show_swatch_detail_0" class="swatch_quick color clearfix" data-option-index="0">
+                      <div class="header">Color</div>
+                      <div id="element-color-black" data-value="black" class="swatch-element color black available">
+                        <div class="tooltip">black</div>
+                        <input id="swatch-quick-0-black" type="radio" name="option-0" value="black">
+                        <label id="label-color-black" for="swatch-quick-0-black" style="background-color: black; border-color: black; background-image: url(assets/images/black.png)">
+                          <img class="crossed-out" src="{% static 'assets/images/soldout.png' %}" alt="">
+                        </label>
+                      </div>
+                      <div id="element-color-red" data-value="red" class="swatch-element color red available">
+                        <div class="tooltip">red</div>
+                        <input id="swatch-quick-0-red" type="radio" name="option-0" value="red">
+                        <label id="label-color-red" for="swatch-quick-0-red" style="background-color: red; border-color: red; background-image: url(assets/images/red.png)">
+                          <img class="crossed-out" src="{% static 'assets/images/soldout.png' %}" alt="">
+                        </label>
+                      </div>
+                      <div id="element-color-blue" data-value="blue" class="swatch-element color blue available">
+                        <div class="tooltip">blue</div>
+                        <input id="swatch-quick-0-blue" type="radio" name="option-0" value="blue">
+                        <label id="label-color-blue" for="swatch-quick-0-blue" style="background-color: blue; border-color: blue; background-image: url(assets/images/blue.png)">
+                          <img class="crossed-out" src="{% static 'assets/images/soldout.png' %}" alt="">
+                        </label>
+                      </div>
+                      <div id="element-color-purple" data-value="purple" class="swatch-element color purple available">
+                        <div class="tooltip">purple</div>
+                        <input id="swatch-quick-0-purple" type="radio" name="option-0" value="purple">
+                        <label id="label-color-purple" for="swatch-quick-0-purple" style="background-color: purple; border-color: purple; background-image: url(assets/images/purple.png)">
+                          <img class="crossed-out" src="{% static 'assets/images/soldout.png' %}" alt="">
+                        </label>
+                      </div>
+                      <div id="element-color-green" data-value="green" class="swatch-element color green available">
+                        <div class="tooltip">green</div>
+                        <input id="swatch-quick-0-green" type="radio" name="option-0" value="green">
+                        <label id="label-color-green" for="swatch-quick-0-green" style="background-color: green; border-color: green; background-image: url(assets/images/green.png)">
+                          <img class="crossed-out" src="{% static 'assets/images/soldout.png' %}" alt="">
+                        </label>
+                      </div>
+                      <div id="element-color-white" data-value="white" class="swatch-element color white available">
+                        <div class="tooltip">white</div>
+                        <input id="swatch-quick-0-white" type="radio" name="option-0" value="white">
+                        <label id="label-color-white" for="swatch-quick-0-white" style="background-color: white; border-color: white; background-image: url(assets/images/white.png)">
+                          <img class="crossed-out" src="{% static 'assets/images/soldout.png' %}" alt="">
+                        </label>
+                      </div>
+                    </div>
+                    <div id="show_swatch_detail_1" class="swatch_quick  clearfix" data-option-index="1">
+                      <div class="header">Size</div>
+                      <div id="element--S" data-value="S" class="swatch-element  S available">
+                        <div class="tooltip">S</div>
+                        <input id="swatch-quick-1-S" type="radio" name="option-1" value="S">
+                        <label id="label-S" for="swatch-quick-1-S">S
+                          <img class="crossed-out" src="{% static 'assets/images/soldout.png' %}" alt="">
+                        </label>
+                      </div>
+                      <div id="element--M" data-value="M" class="swatch-element  M available">
+                        <div class="tooltip">M</div>
+                        <input id="swatch-quick-1-M" type="radio" name="option-1" value="M">
+                        <label id="label-M" for="swatch-quick-1-M">M
+                          <img class="crossed-out" src="{% static 'assets/images/soldout.png' %}" alt="">
+                        </label>
+                      </div>
+                      <div id="element--L" data-value="L" class="swatch-element  L available">
+                        <div class="tooltip">L</div>
+                        <input id="swatch-quick-1-L" type="radio" name="option-1" value="L">
+                        <label id="label-L" for="swatch-quick-1-L">L
+                          <img class="crossed-out" src="{% static 'assets/images/soldout.png' %}" alt="">
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="quick-shop-variants-container" class="variants-wrapper" style="display: block;">
+                    <div class="selector-wrapper">
+                      <label for="quick-shop-variants-6537875078-option-0">Color</label>
+                      <select class="single-option-selector" data-option="option1" id="quick-shop-variants-6537875078-option-0">
+                        <option value="black">black</option>
+                        <option value="red">red</option>
+                        <option value="blue">blue</option>
+                        <option value="purple">purple</option>
+                        <option value="green">green</option>
+                        <option value="white">white</option>
+                      </select>
+                    </div>
+                    <div class="selector-wrapper">
+                      <label for="quick-shop-variants-6537875078-option-1">Size</label>
+                      <select class="single-option-selector" data-option="option2" id="quick-shop-variants-6537875078-option-1">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                      </select>
+                    </div>
+                    <select id="quick-shop-variants-6537875078" name="id" style="display: none;">
+                      <option value="20691985478">black / S</option>
+                      <option value="20691985542">red / S</option>
+                      <option value="20691985606">blue / S</option>
+                      <option value="20691985670">purple / S</option>
+                      <option value="20691985734">green / S</option>
+                      <option value="20691985798">white / S</option>
+                      <option value="20691985862">black / M</option>
+                      <option value="20691985926">red / M</option>
+                      <option value="20691985990">blue / M</option>
+                      <option value="20691986054">purple / M</option>
+                      <option value="20691986118">green / M</option>
+                      <option value="20691986246">white / M</option>
+                      <option value="20691986374">black / L</option>
+                      <option value="20691986502">red / L</option>
+                      <option value="20691986630">blue / L</option>
+                      <option value="20691986694">purple / L</option>
+                      <option value="20691987142">green / L</option>
+                      <option value="20691987270">white / L</option>
+                    </select>
+                  </div>                
+                  <div class="others-bottom">
+                    <input id="quick-shop-add" onclick="change_qs_quantity('-qs');" class="btn btn-1 small add-to-cart" type="submit" name="add" value="Buy Now" style="opacity: 1;">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

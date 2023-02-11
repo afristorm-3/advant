@@ -1,0 +1,627 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <!--Main content-->
+  <main class="main-content" role="main">
+
+    <section class="main-slideshow">
+      <div class="home-slideshow-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-3 home-leftmenu-inner">
+              <ul class="navigation_links_left">
+                <li class="nav-item dropdown navigation">
+                  <a href="collections.html" class="dropdown-toggle dropdown-link" data-toggle="dropdown">
+
+                  <img src="{% static 'assets/images/cookware-casseroles.png' %}" alt="cookware-casseroles" onerror="this.remove();">
+                  <span>Pharmacy </span>
+                  <i class="fa fa-caret-right" aria-hidden="true"></i>
+                  <i class="sub-dropdown1  visible-sm visible-md visible-lg"></i>
+                  <i class="sub-dropdown visible-sm visible-md visible-lg"></i>
+                  </a>
+                  <ul class="dropdown-menu" style="display: none;"> 
+                  <li class="li-sub-mega">
+                    <a tabindex="-1" href="#">Sell Your Pharmacy</a>
+                  </li>
+                  <li class="li-sub-mega">
+                    <a tabindex="-1" href="#">Affiliate Program</a>
+                  </li>
+                  <li class="li-sub-mega">
+                    <a tabindex="-1" href="#">Careers</a>
+                  </li>
+                  <li class="li-sub-mega">
+                    <a tabindex="-1" href="#">Investor Relations</a>
+                  </li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown navigation">
+                  <a href="#" class="dropdown-toggle dropdown-link" data-toggle="dropdown">
+                  <img src="{% static 'assets/images/clothing-vetements.png' %}" alt="clothing-vetements" onerror="this.remove();">
+                  <span>Medical Equipments </span>
+                  <i class="fa fa-caret-right" aria-hidden="true"></i>
+                  <i class="sub-dropdown1  visible-sm visible-md visible-lg"></i>
+                  <i class="sub-dropdown visible-sm visible-md visible-lg"></i>
+                  </a>
+                  <ul class="dropdown-menu"> 
+                  <li class="li-sub-mega">
+                    <a tabindex="-1" href="#">Product recall</a>
+                  </li>
+                  <li class="li-sub-mega">
+                    <a tabindex="-1" href="#">Gift vouchers</a>
+                  </li>
+                  <li class="li-sub-mega">
+                    <a tabindex="-1" href="#">Returns and exchanges</a>
+                  </li>
+                  <li class="li-sub-mega">
+                    <a tabindex="-1" href="#">Blogs</a>
+                  </li>
+                  <li class="li-sub-mega">
+                    <a tabindex="-1" href="#">Help &amp; FAQs</a>
+                  </li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown navigation">
+                  <a href="#" class="dropdown-toggle dropdown-link" data-toggle="dropdown">
+                  <img src="{% static 'assets/images/accessories-accessoires.png' %}" alt="accessories-accessoires" onerror="this.remove();">
+                  <span>Products </span>
+                  <i class="fa fa-caret-right" aria-hidden="true"></i>
+                  <i class="sub-dropdown1  visible-sm visible-md visible-lg"></i>
+                  <i class="sub-dropdown visible-sm visible-md visible-lg"></i>
+                  </a>
+                  <ul class="dropdown-menu"> 
+                  <li class="li-sub-mega">
+                    <a tabindex="-1" href="#">Medicine </a>
+                  </li>
+                  <li class="li-sub-mega">
+                    <a tabindex="-1" href="#">Cosmetics </a>
+                  </li>
+                  <li class="li-sub-mega">
+                    <a tabindex="-1" href="#">Fitness</a>
+                  </li>
+                  <li class="li-sub-mega">
+                    <a tabindex="-1" href="#">Devices </a>
+                  </li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown navigation">
+                  <a href="#" class="dropdown-toggle dropdown-link" data-toggle="dropdown">
+                  <img src="{% static 'assets/images/wallet-portefeuille.png' %}" alt="wallet-portefeuille" onerror="this.remove();">
+                  <span>Lifestyle </span>
+                  <i class="fa fa-caret-right" aria-hidden="true"></i>
+                  <i class="sub-dropdown1  visible-sm visible-md visible-lg"></i>
+                  <i class="sub-dropdown visible-sm visible-md visible-lg"></i>
+                  </a>
+                  <ul class="dropdown-menu"> 
+                  <li class="li-sub-mega">
+                    <a tabindex="-1" href="#">Personal Care </a>
+                  </li>
+                  <li class="li-sub-mega">
+                    <a tabindex="-1" href="#">Hygiene </a>
+                  </li>
+                  <li class="li-sub-mega">
+                    <a tabindex="-1" href="#">Family Care </a>
+                  </li>
+                  <li class="li-sub-mega">
+                    <a tabindex="-1" href="#">Shopping  </a>
+                  </li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a href="#">
+                  <img src="{% static 'assets/images/furniture-meubles.png' %}" alt="furniture-meubles" onerror="this.remove();">
+                  <span>Cardiology </span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#">
+                  <img src="{% static 'assets/images/machines.png' %}" alt="machines" onerror="this.remove();">
+                  <span>Machines</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#">
+                  <img src="{% static 'assets/images/bag.png' %}" alt="bag" onerror="this.remove();">
+                  <span>Medical Equipments</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#">
+                  <img src="{% static 'assets/images/tools.png' %}" alt="tools" onerror="this.remove();">
+                  <span>Health Products</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#">
+                  <img src="{% static 'assets/images/lights.png' %}" alt="lights" onerror="this.remove();">
+                  <span>Medlife</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#">
+                  <img src="{% static 'assets/images/speaker.png' %}" alt="speaker" onerror="this.remove();">
+                  <span>Naturally Good</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-sm-9 home-slideshow-inner">
+              <div class="home-slideshow">
+                <div id="main-slider" class="carousel slide carousel-fade main-slider">
+                  <ol class="carousel-indicators">
+                    <li data-target="#main-slider" data-slide-to="0" class="carousel-1 active "></li>
+                    <li data-target="#main-slider" data-slide-to="1" class="carousel-2"></li>
+                  </ol>
+                  <div class="carousel-inner">
+                    <div class="item active  slideshow-1">
+                      <img src="{% static 'assets/images/slide-image-1.jpg' %}" alt="slide-image-1.jpg">
+                      <div class="slideshow-caption position-middle">
+                        <div class="slide-caption">
+                          <div class="dis_tablecell">   
+                            <div>
+                              <div class="title">
+                                Organic cosmetics
+                              </div>
+                              <div class="content">
+                                <div class="date">
+                                  From 15TH - 30TH May
+                                </div>
+                                <div class="up_to">
+                                  Up to
+                                </div>
+                                <div class="sale">
+                                  <span class="number">
+                                    25
+                                  </span>
+                                  <span class="text">
+                                    % off
+                                  </span>
+                                </div>
+                              </div>  
+                            </div>
+                          <div class="flex-action"><a class="btn" href="#">Shop now </a></div>             
+                          </div>                    
+                        </div>
+                      </div>        
+                    </div>  
+                    <div class="item  slideshow-2">
+                      <img src="{% static 'assets/images/slide-image-2.jpg' %}" alt="slide-image-2.jpg">
+                      <div class="slideshow-caption position-left">
+                        <div class="slide-caption">
+                          <div class="dis_tablecell">   
+                            <div>
+                              <div class="title">
+                                Everything
+                              </div>
+                              <div class="content">
+                                For your health
+                              </div>  
+                            </div>
+                          <div class="flex-action"><a class="btn" href="#">Shop now </a></div>           
+                          </div>                    
+                        </div>
+                      </div>        
+                    </div>  
+                  </div>
+                  <a class="left carousel-control" href="#main-slider" data-slide="prev">
+                    <span class="icon-prev"></span>
+                  </a>
+                  <a class="right carousel-control" href="#main-slider" data-slide="next">
+                    <span class="icon-next"></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="home_topbanner_layout">
+      <div class="home_topbanner_wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="home_topbanner_inner">
+              <div class="col-sm-4">
+                <div class="group_banner">              
+                  <a class="home_topbanner_image" href="#">
+                    <img src="{% static 'assets/images/home_topbanner1.png' %}" alt="">
+                  </a>              
+                  <div class="home_topbanner_content">
+                    <span class="title">
+                      Free shipping
+                    </span>
+                    <span class="content">
+                      On orders over <span class="money" data-currency-usd="$99">$99</span>
+                    </span>
+                  </div> 
+                </div>               
+              </div>
+              <div class="col-sm-4">
+                <div class="group_banner">              
+                  <a class="home_topbanner_image" href="#">
+                    <img src="{% static 'assets/images/home_topbanner2.png' %}" alt="">
+                  </a>              
+                  <div class="home_topbanner_content">
+                    <span class="title">
+                      Spring sale
+                    </span>
+                    <span class="content">
+                      Get up to 15% off
+                    </span>
+                  </div> 
+                </div>               
+              </div>
+              <div class="col-sm-4">
+                <div class="group_banner">              
+                  <a class="home_topbanner_image" href="#">
+                    <img src="{% static 'assets/images/home_topbanner3.png' %}" alt="">
+                  </a>              
+                  <div class="home_topbanner_content">
+                    <span class="title">
+                      Call us
+                    </span>
+                    <span class="content">
+                      We answer for question all time
+                    </span>
+                  </div> 
+                </div>               
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>   
+    </section>    
+
+    <section id="home_category_layout">
+      <div class="home_category_wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="home_category_inner">
+              <div class="col-sm-4">
+                <div class="group_category">
+                  <h1 class="home_category_title">
+                    <span>Age Defy</span>
+                  </h1>
+                  <div class="home_category_image">
+                    <img src="{% static 'assets/images/home_category_tab1.png' %}" alt="">
+                  </div>
+                  <div class="home_category_content">
+                    <span class="home_category_desc">
+                      Carbon rights democratizing the global financial system catalyze policy dialogue affordable.
+                    </span>
+                    <a class="btn btn-2" href="#">Shop now</a>
+                  </div> 
+                </div>               
+              </div>
+              <div class="col-sm-4">
+                <div class="group_category">
+                  <h1 class="home_category_title">
+                    <span>Blemish Clearing</span>
+                  </h1>
+                  <div class="home_category_image">
+                    <img src="{% static 'assets/images/home_category_tab2.png' %}" alt="">
+                  </div>
+                  <div class="home_category_content">
+                    <span class="home_category_desc">
+                      Catalytic effect Bono honesty improving quality action compassion; our ambitions combat.
+                    </span>
+                    <a class="btn btn-2" href="#">Shop now</a>
+                  </div> 
+                </div>               
+              </div>
+              <div class="col-sm-4">
+                <div class="group_category">
+                  <h1 class="home_category_title">
+                    <span>Cosmetic</span>
+                  </h1>
+                  <div class="home_category_image">
+                    <img src="{% static 'assets/images/home_category_tab3.png' %}" alt="">
+                  </div>
+                  <div class="home_category_content">
+                    <span class="home_category_desc">
+                      Sharing economy participatory monitoring capacity building volunteer freedom.
+                    </span>
+                    <a class="btn btn-2" href="#">Shop now</a>
+                  </div> 
+                </div>               
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>   
+    </section>
+   
+    <section id="home_latestproducts_enable">
+      <div class="home_latestproducts_wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="home_latestproducts_inner">
+             
+              <div class="col-sm-12">
+                <h1 class="home_latestproducts_title home-title page-title">
+                  <span>Latest Products</span>
+                </h1>
+                <div class="home_latestproducts_content" style="display:block">
+                  {% for item in object_list %}
+                  <div class="product_content">
+                    
+                    <div class="row-container product list-unstyled clearfix">
+                      <div class="row-left">
+                        <a href="product.html" class="hoverBorder container_item"> 
+                          <div class="hoverBorderWrapper">
+                            <img src="{% static 'assets/images/12_large.jpg' %}" class=" img-responsive front" alt="Carhart, white hipster backpack">
+                            <div class="mask"></div>
+                            <img src="{% static 'assets/images/14_large.jpg' %}" class="rotation img-responsive" alt="Coco Lee, gladiator bag">
+                          </div>        
+                        </a>
+                        <div class="hover-mask">
+                          <div class="group-mask">
+                            <div class="inner-mask">         
+                              <div class="group-actionbutton">
+                                <form action="http://demo.themeforshop.com/cart/add" method="post">
+                                  <div class="hide clearfix"> 
+                                    <select name="id">
+                                      <option selected="selected" value="20691992646">black / S</option>
+                                      <option value="20691992710">red / S</option>
+                                      <option value="20691992774">white / S</option>
+                                      <option value="20691992838">blue / S</option>
+                                      <option value="20691992966">black / M</option>
+                                      <option value="20691993030">red / M</option>
+                                      <option value="20691993094">blue / M</option>
+                                      <option value="20691993158">white / M</option>
+                                    </select>
+                                  </div>  
+                                  <div class="effect-ajax-cart">
+                                    <input type="hidden" name="quantity" value="1">
+                                    <button class="btn select-option" type="button" onclick="window.location='product.html';"><i class="fa fa-bars"></i></button>
+                                  </div>
+                                </form>
+                                <ul class="quickview-wishlist-wrapper">
+                                  <li class="quickview hidden-xs hidden-sm">
+                                    <div class="product-ajax-cart">
+                                      <span class="overlay_mask"></span>
+                                      <div data-handle="donec-condime-fermen" data-target="#quick-shop-modal" class="quick_shop" data-toggle="modal">
+                                        <a class=""><i class="fa fa-search" title="Quick View"></i></a>
+                                        <span class="product-json hide"></span>
+                                      </div>
+                                    </div>
+                                  </li>
+                                  <li class="wishlist hidden-xs">
+                                    <a class="wish-list" href="wish-list.html"><span class="hidden-xs"><i class="fa fa-heart" title="Wishlist"></i></span></a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div><!--inner-mask-->   
+                          </div><!--Group mask-->     
+                        </div>
+                      </div>
+                      <div class="row-right animMix">      
+                        <div class="product-title">
+                          <a class="title-5" href="{{ item.get_absolute_url }}">{{ item.get_category_display }}</a>
+                        </div>
+                        <div class="product-title">
+                          <a class="title-5" href="{{ item.get_absolute_url }}">{{ item.title }}</a>
+                        </div>
+                        <div class="product-price" style="font-family:'currencies">
+                          <span class="price">
+                            <span class="money" data-currency-usd="$200.00">${{ item.price }}</span>
+                          </span>
+                        </div>    
+                        <div class="rating-star">
+                          <span class="spr-badge" id="sprr2_badge3_4" data-rating="4.0">
+                            <span class="spr-starrating spr-badge-starrating"><i class="spr-icon spr-icon-star" style=""></i><i class="spr-icon spr-icon-star" style=""></i><i class="spr-icon spr-icon-star" style=""></i><i class="spr-icon spr-icon-star" style=""></i><i class="spr-icon spr-icon-star-empty" style=""></i></span>
+                            <span class="spr-badge-caption">
+                            1 review
+                            </span>
+                          </span>
+                        </div>
+                      </div>   
+                    </div>
+                  </div>
+                  {% endfor %}
+                </div>            
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>   
+    </section>
+  
+    <section id="home_toprated_enable">
+      <div class="home_toprated_wrapper">
+        <div class="container">
+          <div class="row">
+            
+            <div class="home_toprated_inner">         
+              <h1 class="home_toprated_title home-title page-title">
+                <span>Top rated by our customers</span>
+              </h1>       
+              <div class="home_toprated_content">
+                {% for item in object_list %}  
+        
+               
+                <div class="col-sm-2 product_content">
+                  
+                  <div class="row-container product list-unstyled clearfix">
+                    
+                    <div class="row-left">
+                      <a href="product.html" class="hoverBorder container_item"> 
+                        <div class="hoverBorderWrapper">
+                          <img src="{% static 'assets/images/16_large.jpg' %}" class="rotation img-responsive" alt="Chanel, the cheetah"> 
+                          <div class="mask"></div>
+                          <img src="{% static 'assets/images/15_large.jpg' %}" class="not-rotation img-responsive front" alt="Chanel, the cheetah">
+                        </div>        
+                      </a>
+                      <span class="sale_banner">
+                        <span class="sale_text" data-toggle="tooltip" data-placement="top" title="" data-original-title="Save 13.67%">Sale</span>
+                      </span>
+                      <div class="hover-mask">
+                        <div class="group-mask">
+                          <div class="inner-mask">         
+                            <div class="group-actionbutton">
+                              <form action="http://demo.themeforshop.com/html_comeback/organiccosmeticsstore/cart.html" method="post">
+                                <div class="hide clearfix"> 
+                                <select name="id">
+                                <option selected="selected" value="20691985478">black / S</option>
+                                <option value="20691985542">red / S</option>
+                                <option value="20691985606">blue / S</option>
+                                <option value="20691985670">purple / S</option>
+                                <option value="20691985734">green / S</option>
+                                <option value="20691985798">white / S</option>
+                                <option value="20691985862">black / M</option>
+                                <option value="20691985926">red / M</option>
+                                <option value="20691985990">blue / M</option>
+                                <option value="20691986054">purple / M</option>
+                                <option value="20691986118">green / M</option>
+                                <option value="20691986246">white / M</option>
+                                <option value="20691986374">black / L</option>
+                                <option value="20691986502">red / L</option>
+                                <option value="20691986630">blue / L</option>
+                                <option value="20691986694">purple / L</option>
+                                <option value="20691987142">green / L</option>
+                                <option value="20691987270">white / L</option>
+                                </select>
+                                </div>  
+                                <div class="effect-ajax-cart">
+                                <input type="hidden" name="quantity" value="1">
+                                <button class="btn select-option" type="button" onclick="window.location='product.html';"><i class="fa fa-bars"></i></button>
+                                </div>
+                              </form>
+                              <ul class="quickview-wishlist-wrapper">
+                                <li class="quickview hidden-xs hidden-sm">
+                                <div class="product-ajax-cart">
+                                <span class="overlay_mask"></span>
+                                <div data-handle="curabitur-cursus-dignis-2" data-target="#quick-shop-modal" class="quick_shop" data-toggle="modal">
+                                  <a class=""><i class="fa fa-search" title="Quick View"></i></a>
+                                  <span class="product-json hide"></span>
+                                </div>
+                                </div>
+                                </li>
+                                <li class="wishlist hidden-xs">
+                                <a class="wish-list" href="wish-list.html"><span class="hidden-xs"><i class="fa fa-heart" title="Wishlist"></i></span></a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div><!--inner-mask-->   
+                        </div><!--Group mask-->     
+                      </div>
+                    </div>
+                    <div class="row-right animMix">      
+                      <div class="product-title">
+                        <a class="title-5" href="#">{{ item.get_category_display }}</a>
+                      </div>
+                      <div class="product-title">
+                        <a class="title-5" href="#">{{ item.title }}</a>
+                      </div>
+                      <div class="product-price" style="font-family:'currencies'">
+                        <span class="price_sale"><span class="money" data-currency-usd="$259.00">${% if item.discount_price %}
+                          {{ item.discount_price }}
+                          {% else %}
+                          
+                          {{ item.price }}
+                          
+                          {% endif %}</span></span>
+                        <del class="price_compare"> <span class="money" data-currency-usd="$300.00">${{ item.price }}</span></del>
+                      </div>    
+                      <div class="rating-star">
+                        <span class="spr-badge" data-rating="5.0">
+                          <span class="spr-starrating spr-badge-starrating"><i class="spr-icon spr-icon-star" style=""></i><i class="spr-icon spr-icon-star" style=""></i><i class="spr-icon spr-icon-star" style=""></i><i class="spr-icon spr-icon-star" style=""></i><i class="spr-icon spr-icon-star" style=""></i></span>
+                          <span class="spr-badge-caption">
+                          1 review
+                          </span>
+                        </span>
+                      </div>
+                    </div>   
+                  </div>
+                 
+                </div>
+                {% endfor %} 
+      
+              </div>   
+                           
+            </div>
+          </div>
+        </div>
+      </div>   
+    </section>
+    
+    <section id="home_bottombanner_layout">
+      <div class="home_bottombanner_wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="home_bottombanner_inner">
+              <div class="home_bottombanner_image">
+                <img src="{% static 'assets/images/home_bottombanner.jpg' %}" alt="">
+              </div>
+              <div class="home_bottombanner_content">
+                <div class="dis_table">
+                  <div class="dis_tablecell">
+                    <div class="group_content">
+                      <span class="title">
+                        Sale!
+                      </span>
+                      <span class="content">
+                        Check out the hottest beauty products on sale
+                      </span>
+                    </div>
+                    <a class="btn btn-2" href="#">Shop now</a>
+                  </div>  
+                </div>
+              </div>         
+            </div>
+          </div>
+        </div>
+      </div>   
+    </section>
+
+    <section class="home_partner_layout home3_partner">
+      <div class="home_partner_wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="home_partner_inner">          
+              <div id="home3_partner_content" class="clearfix" style="display:block">
+                <div class="logo text-center">
+                  <a class="animated" href="#">
+                    <img class="pulse" src="{% static 'assets/images/home3_partners_logo_1.png' %}" alt="">
+                  </a>
+                </div>
+                <div class="logo text-center">
+                  <a class="animated" href="#">
+                    <img class="pulse" src="{% static 'assets/images/home3_partners_logo_2.png' %}" alt="">
+                  </a>
+                </div>
+                <div class="logo text-center">
+                  <a class="animated" href="#">
+                    <img class="pulse" src="{% static 'assets/images/home3_partners_logo_3.png' %}" alt="">
+                  </a>
+                </div>
+                <div class="logo text-center">
+                  <a class="animated" href="#">
+                    <img class="pulse" src="{% static 'assets/images/home3_partners_logo_4.png' %}" alt="">
+                  </a>
+                </div>
+                <div class="logo text-center">
+                  <a class="animated" href="#">
+                    <img class="pulse" src="{% static 'assets/images/home3_partners_logo_5.png' %}" alt="">
+                  </a>
+                </div>
+                <div class="logo text-center">
+                  <a class="animated" href="#">
+                    <img class="pulse" src="{% static 'assets/images/home3_partners_logo_6.png' %}" alt="">
+                  </a>
+                </div>
+                <div class="logo text-center">
+                  <a class="animated" href="#">
+                    <img class="pulse" src="{% static 'assets/images/home3_partners_logo_7.png' %}" alt="">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  {% endblock %}

@@ -259,7 +259,7 @@
                           <span>CHECKOUT</span>
                           <i class="fa fa-caret-right"></i>
                           </button>
-                          <button class="btn btn-2" onclick="window.location='{% url 'store:order-summary' %}'">
+                          <a href="{% url 'store:order-summary' %}" class="btn btn-2" >
                           <span>View Cart</span>
                           <i class="fa fa-caret-right"></i>
                           </button>
@@ -541,10 +541,10 @@
                     <!--<div class="fix_search_dropdown" style="opacity:0; height:200px;background:transparent;"></div>-->
                     </div>
                   </div>
-                  {% if user.is.authenticated %}
+                  {% if request.user.is.authenticated %}
                   <div class="icon_cart">
                     <div class="cart-info-group">
-                      <a href="cart.html" class="cart dropdown-toggle dropdown-link" data-toggle="dropdown">
+                      <a href="{% url 'store:order-summary' %}" class="cart dropdown-toggle dropdown-link" data-toggle="dropdown">
                         <i class="sub-dropdown1 visible-sm visible-md visible-lg"></i>
                         <i class="sub-dropdown visible-sm visible-md visible-lg"></i> 
                         <div class="num-items-in-cart">
@@ -562,7 +562,7 @@
                             <i class="fa fa-times"></i>
                           </a>
                           <div class="cart-left col-sm-4">
-                            <a class="cart-image" href="product.html">
+                            <a class="cart-image" href="{% url 'item-lists' %}">
                             <img src="{% static 'assets/images/2_compact.jpg' %}" alt="" title="">
                             </a>
                           </div>
@@ -601,14 +601,14 @@
                           <span class="cart-total-right money" style="font-family:currencies" data-currency-usd="$459.00" data-currency="USD">$459.00</span>
                         </div>
                         <div class="action">
-                          <button class="btn btn-3 float-right" onclick="window.location='index-2.html'">
+                          <a href="{% url 'store:checkout' %}" class="btn btn-3 float-right" >
                           <span>CHECKOUT</span>
                           <i class="fa fa-caret-right"></i>
-                          </button>
-                          <button class="btn btn-2" onclick="window.location='cart.html'">
+                          </a>
+                          <a href="{% url 'store:order-summary' %}" class="btn btn-2" >
                           <span>View Cart</span>
                           <i class="fa fa-caret-right"></i>
-                          </button>
+                          </a>
                         </div>
                         </div>
                       </div>
@@ -617,9 +617,10 @@
                   {% endif %}
                 </div>
               </div>  
+              {% if user.is.authenticated %}
               <div class="mobile-navigation">
                 <div class="nav-search visible-xs">
-                  <form class="search" action="http://demo.themeforshop.com/html_comeback/organiccosmeticsstore/search.html">               
+                  <form class="search" action="#">               
                     <input type="hidden" name="type" value="product">
                     <input type="text" name="q" class="search_box" placeholder="Enter your keyword ..." value="">
                     <input type="image" src="{% static 'assets/images/icon-search.png' %}" alt="Go">
@@ -627,18 +628,19 @@
                 </div>
                 <div class="icon_cart visible-xs">
                   <div class="cart-info-group">
-                    <a href="cart.html" class="cart dropdown-toggle dropdown-link">
+                    <a href="{% url 'store:order-summary' %}" class="cart dropdown-toggle dropdown-link">
                       <i class="sub-dropdown1 visible-sm visible-md visible-lg"></i>
                       <i class="sub-dropdown visible-sm visible-md visible-lg"></i> 
                       <div class="num-items-in-cart">
                         <div class="items-cart-left">
                         <img class="cart_img" src="{% static 'assets/images/bg-cart.png' %}" alt="">
-                        <span class="cart_text icon"><span class="number">2</span></span>       
+                        <span class="cart_text icon"><span class="number">{{ user|cart_item_count }}</span></span>       
                         </div>
                       </div>
                     </a>
                   </div>
                 </div>
+                {% endif %}   
                 <div class="mobile-navigation-inner">
                   <button id="showLeftPush" class="visible-xs">
                     <i class="fa fa-bars fa-2x"></i>
@@ -724,39 +726,34 @@
                           <div class="is-mobile-login">                        
                             <ul class="customer">
                               <li class="logout">
-                                <a href="login.html"><i class="fa fa-user" aria-hidden="true"></i><span data-translate1="layout.customer.login">Login</span></a>
+                                <a href="{% url 'account_login' %}"><i class="fa fa-user" aria-hidden="true"></i><span data-translate1="layout.customer.login">Login</span></a>
                               </li>
                               <li class="account">
-                                <a href="register.html"><i class="fa fa-user-plus" aria-hidden="true"></i><span data-translate1="layout.customer.create_account">Register</span></a>
+                                <a href="{% url 'account_signup' %}"><i class="fa fa-user-plus" aria-hidden="true"></i><span data-translate1="layout.customer.create_account">Register</span></a>
                               </li>
                               <li class="is-mobile-cart">
                                 <a href="cart.html">
-                                  <div class="num-items-in-cart">
-                                    <i class="fa fa-shopping-cart"></i>
-                                    <span>
-                                    Cart
-                                    </span>
-                                    <div class="ajax-subtotal" style="display:none;"></div>
-                                  </div>
+                               
                                 </a>
                               </li>
                             </ul>                        
                           </div>
                         </div>
                       </div>
-                    </div>              
+                    </div>    
+                           
                     <div class="nav-menu visible-xs leftnavi" id="is-mobile-nav-menu">
                       <div class="is-mobile-menu-content">
                         <div class="mobile-content-link">
                           <ul class="nav navbar-nav hoverMenuWrapper">
                             <li class="nav-item active">
-                              <a href="index-2.html">
+                              <a href="/">
                               Home 
                               </a>
                             </li>
                             <li class="nav-item navigation navigation_mobile">
-                              <a href="collections_all.html" class="menu-mobile-link">
-                              Shop 
+                              <a href="#" class="menu-mobile-link">
+                             Medical Services
                               </a>
                               <a href="javascript:void(0)" class="arrow">
                                 <i class="fa fa-angle-down"></i>
@@ -764,7 +761,7 @@
                               <ul class="menu-mobile-container" style="display: none;">
                                 <li class=" li-sub-mega navigation_mobile_1">
                                   <a href="#" class="menu-mobile-link">
-                                    <span>Shorts </span>
+                                    <span>Product </span>
                                   </a>
                                   <a href="javascript:void(0)" class="arrow_1">
                                     <i class="fa fa-angle-down"></i>
@@ -816,7 +813,7 @@
                             </li>
                             <li class="nav-item  navigation_mobile">
                               <a href="collections.html" class="menu-mobile-link">
-                                Templates 
+                                About Us
                               </a>
                               <a href="javascript:void(0)" class="arrow">
                                 <i class="fa fa-angle-down"></i>
@@ -933,12 +930,12 @@
                             </li>
                             <li class="nav-item">
                               <a href="blog.html">
-                                Blog 
+                               FAQ
                               </a>
                             </li>
                             <li class="nav-item">
                               <a href="lookbook.html">
-                                Lookbook 
+                                CONTACT US
                               </a>
                             </li>
                           </ul>

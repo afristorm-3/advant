@@ -730,20 +730,19 @@
                       </li>
                     </ul>
                   </li>
- <li class="is-mobile-cart">
+ 
+                  <li class="logout">
+                    <a href="{% url 'account_logout' %}">LogOut</a>
+                  </li>
+                             <li class="is-mobile-cart">
                                 <a href="{% url 'store:order-summary' %}">
                                   <div class="num-items-in-cart">
                                     <i class="fa fa-shopping-cart"></i>
-                                    <span>
-                                    Cart
-                                    </span>
+                                   
                                     <div class="ajax-subtotal" style="display:none;"></div>
                                   </div>
                                 </a>
                               </li>
-                  <li class="logout">
-                    <a href="{% url 'account_logout' %}">LogOut</a>
-                  </li>
                     {% else %}
           
                

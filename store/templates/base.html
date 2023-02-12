@@ -626,6 +626,7 @@
                     <input type="image" src="{% static 'assets/images/icon-search.png' %}" alt="Go">
                   </form>
                 </div>
+                {% if user.is_authenticated %}
                 <div class="icon_cart visible-xs">
                   <div class="cart-info-group">
                     <a href="cart.html" class="cart dropdown-toggle dropdown-link">
@@ -634,12 +635,13 @@
                       <div class="num-items-in-cart">
                         <div class="items-cart-left">
                         <img class="cart_img" src="{% static 'assets/images/bg-cart.png' %}" alt="">
-                        <span class="cart_text icon"><span class="number">2</span></span>       
+                        <span class="cart_text icon"><span class="number">{{ user|cart_item_count }}</span></span>       
                         </div>
                       </div>
                     </a>
                   </div>
                 </div>
+                {% endif %}
                 <div class="mobile-navigation-inner">
                   <button id="showLeftPush" class="visible-xs">
                     <i class="fa fa-bars fa-2x"></i>

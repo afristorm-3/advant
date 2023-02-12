@@ -620,7 +620,7 @@
               </div>  
               <div class="mobile-navigation">
                 <div class="nav-search visible-xs">
-                  <form class="search" action="http://demo.themeforshop.com/html_comeback/organiccosmeticsstore/search.html">               
+                  <form class="search" action="#">               
                     <input type="hidden" name="type" value="product">
                     <input type="text" name="q" class="search_box" placeholder="Enter your keyword ..." value="">
                     <input type="image" src="{% static 'assets/images/icon-search.png' %}" alt="Go">
@@ -629,7 +629,7 @@
                 {% if user.is_authenticated %}
                 <div class="icon_cart visible-xs">
                   <div class="cart-info-group">
-                    <a href="cart.html" class="cart dropdown-toggle dropdown-link">
+                    <a href="{% url 'store:order-summary' %}" class="cart dropdown-toggle dropdown-link">
                       <i class="sub-dropdown1 visible-sm visible-md visible-lg"></i>
                       <i class="sub-dropdown visible-sm visible-md visible-lg"></i> 
                       <div class="num-items-in-cart">
@@ -665,38 +665,16 @@
                                   <input type="hidden" value="USD">
                                 </li>
                                 <li class="currency-INR">
-                                  <a href="javascript:;">INR</a>
+                                  <a href="javascript:;">NGN</a>
                                   <input type="hidden" value="INR">
                                 </li>
-                                <li class="currency-GBP">
-                                  <a href="javascript:;">GBP</a>
-                                  <input type="hidden" value="GBP">
-                                </li>
-                                <li class="currency-CAD">
-                                  <a href="javascript:;">CAD</a>
-                                  <input type="hidden" value="CAD">
-                                </li>
-                                <li class="currency-AUD">
-                                  <a href="javascript:;">AUD</a>
-                                  <input type="hidden" value="AUD">
-                                </li>
-                                <li class="currency-EUR">
-                                  <a href="javascript:;">EUR</a>
-                                  <input type="hidden" value="EUR">
-                                </li>
-                                <li class="currency-JPY">
-                                  <a href="javascript:;">JPY</a>
-                                  <input type="hidden" value="JPY">
-                                </li>
+                                
+                              
                               </ul>
                               <select class="currencies_src hide" name="currencies">
                                 <option value="USD" selected="selected">USD</option>
-                                <option value="INR">INR</option>
-                                <option value="GBP">GBP</option>
-                                <option value="CAD">CAD</option>
-                                <option value="AUD">AUD</option>
-                                <option value="EUR">EUR</option>
-                                <option value="JPY">JPY</option>
+                                <option value="INR">NGN</option>
+                                
                               </select>
                             </div>
                           </div>
@@ -727,7 +705,7 @@
                           <div class="is-mobile-login">  
                            <ul class="customer">
                   {% if request.user.is_authenticated %}
-                   <a href="collections_all.html" class="menu-mobile-link">
+                   <a href="{% url 'store:item-lists' %}" class="menu-mobile-link">
                     <a href="javascript:void(0)" class="arrow"><span>{{user.username}}</span>
                        <i class="fa fa-angle-down"></i>
                     </a>
